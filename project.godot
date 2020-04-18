@@ -19,6 +19,10 @@ config/name="LD46"
 run/main_scene="res://Root.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalNodeReferences="*res://GlobalNodeReferences.gd"
+
 [input]
 
 jump={
