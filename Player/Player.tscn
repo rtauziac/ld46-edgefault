@@ -58,4 +58,3 @@ wait_time = 0.4
 __meta__ = {
 "_editor_description_": "Triggers during the time sword hit box is active"
 }
-[connection signal="body_entered" from="SwordArea" to="." method="_on_SwordArea_body_entered"]
