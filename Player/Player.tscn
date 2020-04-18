@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.vs" type="Script" id=1]
+[ext_resource path="res://Player/SwordArea.vs" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 1.7
@@ -11,18 +12,26 @@ mid_height = 1.7
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.19, 2.048, 0.19 )
 
+[sub_resource type="CylinderShape" id=4]
+radius = 2.07836
+height = 2.11138
+
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 5
 script = ExtResource( 1 )
-speed = 1000.0
+__meta__ = {
+"_editor_description_": "Player"
+}
+speed = 700.0
 gravity = -60.0
+deadZone = 0.35
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="PlayerMeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -30,7 +39,23 @@ material/0 = null
 [node name="Sword" type="Spatial" parent="."]
 transform = Transform( 0.969643, 0.199433, -0.141487, 0.00335781, 0.567707, 0.823224, 0.244501, -0.798708, 0.549804, 1.23747, 0, -0.606656 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Sword"]
+[node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00039, 0 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="SwordArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8451 )
+collision_layer = 32
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="SwordCollisionShape" type="CollisionShape" parent="SwordArea"]
+shape = SubResource( 4 )
+
+[node name="SwordHitTimer" type="Timer" parent="."]
+wait_time = 0.4
+__meta__ = {
+"_editor_description_": "Triggers during the time sword hit box is active"
+}
+[connection signal="body_entered" from="SwordArea" to="." method="_on_SwordArea_body_entered"]
