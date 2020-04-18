@@ -12,13 +12,14 @@
 environment = ExtResource( 3 )
 
 [node name="Arena" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00983095, 0.00779068, 0.000521183 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 15 )
 cameraHolder = NodePath("../CameraHolder")
 
 [node name="CameraHolder" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 4, 15 )
+transform = Transform( 1, 0, 0, 0, 0.96544, 0.260623, 0, -0.260623, 0.96544, 0, 4, 15 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -27,7 +28,7 @@ target = NodePath("../Enemies/Scorpion")
 player = NodePath("../Player")
 
 [node name="ClippedCamera" type="ClippedCamera" parent="CameraHolder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27636, 9.99999 )
+transform = Transform( 1, 0, 0, 0, 0.950174, 0.311722, 0, -0.311722, 0.950174, 0, 7.73157, 9.10489 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 0, 30, 0 )

@@ -52,14 +52,21 @@ func _process(delta):
 		look_at(player.translation, Vector3(0, 1, 0))
 		match state:
 			ScorpionState.moveLeft:
-				move_and_slide(-global_transform.basis.x * speed * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(-global_transform.basis.x) * speed * delta, Vector3(0, 1, 0))
 			ScorpionState.moveRight:
-				move_and_slide(global_transform.basis.x * speed * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(global_transform.basis.x) * speed * delta, Vector3(0, 1, 0))
 			ScorpionState.moveForward:
-				move_and_slide(global_transform.basis.z * speed * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(global_transform.basis.z) * speed * delta, Vector3(0, 1, 0))
 			ScorpionState.moveBackward:
-				move_and_slide(-global_transform.basis.z * speed * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(-global_transform.basis.z) * speed * delta, Vector3(0, 1, 0))
 			ScorpionState.attack:
-				move_and_slide(global_transform.basis.z * speed * 3 * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(global_transform.basis.z) * speed * 3 * delta, Vector3(0, 1, 0))
 			ScorpionState.dodgeBack:
-				move_and_slide(-global_transform.basis.z * speed * 3 * delta, Vector3(0, 1, 0))
+				move_and_slide(flattenVector(-global_transform.basis.z) * speed * 3 * delta, Vector3(0, 1, 0))
+				
+		move_and_slide(Vector3(0, -1, 0))
+
+func flattenVector(vector: Vector3):
+	vector.y = 0
+	return vector.normalized()
+	
