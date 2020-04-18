@@ -23,7 +23,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-target = NodePath("../Arena")
+target = NodePath("../Enemies/Scorpion")
 player = NodePath("../Player")
 
 [node name="ClippedCamera" type="ClippedCamera" parent="CameraHolder"]
@@ -37,3 +37,4 @@ shadow_enabled = true
 [node name="Enemies" type="Spatial" parent="."]
 
 [node name="Scorpion" parent="Enemies" instance=ExtResource( 5 )]
+health = 12.0

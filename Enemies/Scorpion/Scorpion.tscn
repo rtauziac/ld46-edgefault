@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "Scorpion"
 }
+speed = 250.0
 
 [node name="CollisionPolygon" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
