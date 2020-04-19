@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/Player.vs" type="Script" id=1]
 [ext_resource path="res://Player/samurai_body.obj" type="ArrayMesh" id=2]
@@ -7,15 +7,227 @@
 [ext_resource path="res://Player/samuraiHeadMat.tres" type="Material" id=5]
 [ext_resource path="res://Player/samuraiBodyMat.tres" type="Material" id=6]
 [ext_resource path="res://Player/samuraiHairMat.tres" type="Material" id=7]
+[ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=8]
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+step = 0.2
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.580333
 height = 2.5154
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="VisualShaderNodeColorUniform" id=7]
+uniform_name = "MainColor"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=2]
+constant = 0.3
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=3]
+constant = 0.2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=8]
+default_input_values = [ 0, 0.0, 1, 3.0 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=9]
+
+[sub_resource type="VisualShaderNodeInput" id=10]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=11]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=12]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=25]
+default_input_values = [ 0, 0.0, 1, 3.0 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=14]
+uniform_name = "wind"
+
+[sub_resource type="VisualShaderNodeVec3Constant" id=15]
+constant = Vector3( 1, 1, 1 )
+
+[sub_resource type="VisualShaderNodeVectorOp" id=16]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=17]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=18]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=19]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=20]
+function = 0
+
+[sub_resource type="VisualShaderNodeInput" id=21]
+input_name = "vertex"
+
+[sub_resource type="VisualShader" id=4]
+code = "shader_type spatial;
+render_mode cull_disabled;
+
+uniform float wind;
+uniform vec4 MainColor : hint_color;
+
+
+
+void vertex() {
+// ScalarUniform:2
+	float n_out2p0;
+	n_out2p0 = wind;
+
+// Vector:3
+	vec3 n_out3p0;
+	n_out3p0 = vec3(1.000000,1.000000,1.000000);
+
+// VectorOp:5
+	vec3 n_out5p0;
+	n_out5p0 = vec3(n_out2p0) * n_out3p0;
+
+// Input:7
+	float n_out7p0;
+	n_out7p0 = TIME;
+
+// ScalarOp:16
+	float n_in16p1 = 3.00000;
+	float n_out16p0;
+	n_out16p0 = n_out7p0 * n_in16p1;
+
+// Input:12
+	vec3 n_out12p0;
+	n_out12p0 = VERTEX;
+
+// VectorDecompose:13
+	float n_out13p0;
+	float n_out13p1;
+	float n_out13p2;
+	n_out13p0 = n_out12p0.x;
+	n_out13p1 = n_out12p0.y;
+	n_out13p2 = n_out12p0.z;
+
+// ScalarOp:15
+	float n_out15p0;
+	n_out15p0 = n_out13p1 + n_out13p2;
+
+// ScalarOp:14
+	float n_out14p0;
+	n_out14p0 = n_out13p0 + n_out15p0;
+
+// ScalarOp:11
+	float n_out11p0;
+	n_out11p0 = n_out16p0 + n_out14p0;
+
+// ScalarOp:10
+	float n_in10p1 = 3.00000;
+	float n_out10p0;
+	n_out10p0 = n_out11p0 * n_in10p1;
+
+// ScalarFunc:8
+	float n_out8p0;
+	n_out8p0 = sin(n_out10p0);
+
+// VectorOp:6
+	vec3 n_out6p0;
+	n_out6p0 = n_out5p0 * vec3(n_out8p0);
+
+// Input:9
+	vec3 n_out9p0;
+	n_out9p0 = VERTEX;
+
+// VectorOp:4
+	vec3 n_out4p0;
+	n_out4p0 = n_out6p0 + n_out9p0;
+
+// Output:0
+	VERTEX = n_out4p0;
+
+}
+
+void fragment() {
+// ColorUniform:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	n_out2p0 = MainColor.rgb;
+	n_out2p1 = MainColor.a;
+
+// Scalar:3
+	float n_out3p0;
+	n_out3p0 = 0.300000;
+
+// Scalar:4
+	float n_out4p0;
+	n_out4p0 = 0.200000;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ROUGHNESS = n_out3p0;
+	SSS_STRENGTH = n_out4p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -1423, 286 )
+modes/cull = 2
+nodes/vertex/0/position = Vector2( 400, 160 )
+nodes/vertex/2/node = SubResource( 14 )
+nodes/vertex/2/position = Vector2( -540, 220 )
+nodes/vertex/3/node = SubResource( 15 )
+nodes/vertex/3/position = Vector2( -660, 300 )
+nodes/vertex/4/node = SubResource( 16 )
+nodes/vertex/4/position = Vector2( 180, 160 )
+nodes/vertex/5/node = SubResource( 17 )
+nodes/vertex/5/position = Vector2( -320, 220 )
+nodes/vertex/6/node = SubResource( 18 )
+nodes/vertex/6/position = Vector2( -60, 180 )
+nodes/vertex/7/node = SubResource( 19 )
+nodes/vertex/7/position = Vector2( -1100, 320 )
+nodes/vertex/8/node = SubResource( 20 )
+nodes/vertex/8/position = Vector2( -240, 420 )
+nodes/vertex/9/node = SubResource( 21 )
+nodes/vertex/9/position = Vector2( -20, 320 )
+nodes/vertex/10/node = SubResource( 8 )
+nodes/vertex/10/position = Vector2( -460, 420 )
+nodes/vertex/11/node = SubResource( 9 )
+nodes/vertex/11/position = Vector2( -660, 420 )
+nodes/vertex/12/node = SubResource( 10 )
+nodes/vertex/12/position = Vector2( -1480, 520 )
+nodes/vertex/13/node = SubResource( 11 )
+nodes/vertex/13/position = Vector2( -1300, 520 )
+nodes/vertex/14/node = SubResource( 12 )
+nodes/vertex/14/position = Vector2( -860, 480 )
+nodes/vertex/15/node = SubResource( 13 )
+nodes/vertex/15/position = Vector2( -1060, 560 )
+nodes/vertex/16/node = SubResource( 25 )
+nodes/vertex/16/position = Vector2( -911, 362 )
+nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 5, 1, 5, 0, 6, 0, 8, 0, 6, 1, 6, 0, 4, 0, 9, 0, 4, 1, 4, 0, 0, 0, 12, 0, 13, 0, 13, 0, 14, 0, 14, 0, 11, 1, 13, 1, 15, 0, 15, 0, 14, 1, 13, 2, 15, 1, 10, 0, 8, 0, 11, 0, 10, 0, 7, 0, 16, 0, 16, 0, 11, 0 )
+nodes/fragment/0/position = Vector2( 420, 140 )
+nodes/fragment/2/node = SubResource( 7 )
+nodes/fragment/2/position = Vector2( 80, 180 )
+nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/position = Vector2( 80, 320 )
+nodes/fragment/4/node = SubResource( 3 )
+nodes/fragment/4/position = Vector2( 140, 480 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 16 )
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = SubResource( 4 )
+shader_param/wind = 0.012
+shader_param/MainColor = Color( 0.0352941, 0.027451, 0.145098, 1 )
+
+[sub_resource type="CubeMesh" id=23]
 size = Vector3( 0.19, 2.048, 0.19 )
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=24]
 radius = 2.07836
 height = 2.11138
 
@@ -35,6 +247,7 @@ gravity = -60.0
 deadZone = 0.35
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 6 )
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
@@ -54,14 +267,29 @@ material/1 = ExtResource( 7 )
 [node name="hair" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.39266, 0.0539283 )
 mesh = ExtResource( 4 )
-material/0 = ExtResource( 7 )
+material/0 = SubResource( 22 )
+
+[node name="leg" type="MeshInstance" parent="."]
+transform = Transform( 0.394723, -0.092301, -0.0201745, 0.0641398, 0.582999, 0.0694593, 0.0089176, -0.107667, 0.393406, 0.341834, -0.872527, -0.123572 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="arm" type="MeshInstance" parent="."]
+transform = Transform( 0.275586, -0.149942, -0.0374966, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871709, 0.803231, 0.283715, -0.417931 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="leg2" type="MeshInstance" parent="."]
+transform = Transform( 0.393565, 0.102833, -0.0201769, -0.0641412, 0.582999, 0.0694593, 0.0315097, -0.0976595, 0.393406, -0.342, -0.873, -0.124 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 5 )
 
 [node name="Sword" type="Spatial" parent="."]
 transform = Transform( 0.969643, 0.199433, -0.141487, 0.00335781, 0.567707, 0.823224, 0.244501, -0.798708, 0.549804, 1.23747, 0, -0.606656 )
 
 [node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00039, 0 )
-mesh = SubResource( 3 )
+transform = Transform( 0.698538, -0.0463158, -0.0193449, 0.0264266, 0.884762, -0.227941, 0.0295472, 0.303654, 0.661206, -0.30027, 1.1544, -0.0599105 )
+mesh = SubResource( 23 )
 material/0 = null
 
 [node name="SwordArea" type="Area" parent="."]
@@ -70,7 +298,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="SwordCollisionShape" type="CollisionShape" parent="SwordArea"]
-shape = SubResource( 4 )
+shape = SubResource( 24 )
 
 [node name="SwordHitTimer" type="Timer" parent="."]
 wait_time = 0.4
@@ -79,7 +307,7 @@ __meta__ = {
 }
 
 [node name="DamageArea" type="Area" parent="."]
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="ContactDamageCollisionShape" type="CollisionShape" parent="DamageArea"]
