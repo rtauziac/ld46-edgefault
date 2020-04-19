@@ -38,4 +38,5 @@ shadow_enabled = true
 [node name="Enemies" type="Spatial" parent="."]
 
 [node name="Scorpion" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.77893, 0 )
 health = 12.0
