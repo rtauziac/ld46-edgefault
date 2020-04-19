@@ -24,6 +24,8 @@ func hit(hitDamage: float):
 	if isAlive():
 		print("Scorpion is hit")
 		.hit(hitDamage)
+		$"Particles".emitting = true
+		$"BloodTimer".start()
 		randomizeChoice()
 		
 		if !isAlive():
@@ -79,4 +81,6 @@ func _process(delta):
 func flattenVector(vector: Vector3):
 	vector.y = 0
 	return vector.normalized()
-	
+
+func _on_BloodTimer_timeout():
+	$"Particles".emitting = false

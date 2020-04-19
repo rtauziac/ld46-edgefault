@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Enemies/Scorpion/Scorpion.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Scorpion/scorpion.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Enemies/EnemyMainMat.tres" type="Material" id=4]
+[ext_resource path="res://Enemies/blood.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.36077, 1.19543, 3.09344 )
+
+[sub_resource type="Animation" id=1]
 resource_name = "idle"
 loop = true
 step = 0.2
@@ -160,8 +164,34 @@ tracks/5/keys = {
 "values": [ Vector3( -2.05281, 0.293001, -1.49949 ), Vector3( -2.05281, 0.0338266, -1.20556 ), Vector3( -1.92753, -0.37323, -1.20556 ), Vector3( -2.06626, 0.278476, -0.944195 ) ]
 }
 
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 1.36077, 1.19543, 3.09344 )
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 28.9002, 0, 0, Vector2( 0.103226, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.662566, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -7.45662, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+initial_velocity = 7.0
+initial_velocity_random = 0.77
+angular_velocity = 437.3
+angular_velocity_random = 0.83
+damping = 3.23
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 0.82
+scale_curve = SubResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
 
 [node name="Scorpion" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15528, 0 )
@@ -173,9 +203,12 @@ __meta__ = {
 }
 speed = 250.0
 
+[node name="MainCollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/idle = SubResource( 3 )
+anims/idle = SubResource( 1 )
 anims/walk = SubResource( 2 )
 
 [node name="body" type="MeshInstance" parent="."]
@@ -213,5 +246,17 @@ transform = Transform( -0.49392, 0.513215, 0.145681, 0.337727, 0.681818, 0.28033
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 4 )
 
-[node name="MainCollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 4 )
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( -1.03316e-07, -1, 0, 1, -1.03316e-07, 0, 0, 0, 1, 0.448755, 0.269504, 0 )
+cast_shadow = 0
+emitting = false
+amount = 18
+lifetime = 0.91
+local_coords = false
+draw_order = 1
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="BloodTimer" type="Timer" parent="."]
+wait_time = 0.2
+[connection signal="timeout" from="BloodTimer" to="." method="_on_BloodTimer_timeout"]
