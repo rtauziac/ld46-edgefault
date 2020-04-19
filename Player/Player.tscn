@@ -10,7 +10,7 @@
 [ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://Player/blade.obj" type="ArrayMesh" id=9]
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=1]
 resource_name = "attack"
 length = 0.4
 step = 0.2
@@ -135,8 +135,7 @@ tracks/9/keys = {
 "values": [ Vector3( 44.9077, 68.8395, 4.11007 ), Vector3( 53.4575, 79.3515, -1.51188 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle"
+[sub_resource type="Animation" id=2]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -308,8 +307,7 @@ tracks/13/keys = {
 "values": [ Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "run"
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -481,62 +479,62 @@ tracks/13/keys = {
 "values": [ Vector3( -80.288, 171.097, 166.88 ), Vector3( -84.9924, -20.6435, 12.3463 ), Vector3( -58.8457, 9.74199, 5.59204 ), Vector3( -52.1207, 10.8111, 4.70957 ) ]
 }
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=4]
 radius = 0.580333
 height = 2.5154
 
-[sub_resource type="VisualShaderNodeColorUniform" id=4]
+[sub_resource type="VisualShaderNodeColorUniform" id=5]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=5]
+[sub_resource type="VisualShaderNodeScalarConstant" id=6]
 constant = 0.3
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=6]
+[sub_resource type="VisualShaderNodeScalarConstant" id=7]
 constant = 0.2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=7]
+[sub_resource type="VisualShaderNodeScalarOp" id=8]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=8]
+[sub_resource type="VisualShaderNodeScalarOp" id=9]
 
-[sub_resource type="VisualShaderNodeInput" id=9]
+[sub_resource type="VisualShaderNodeInput" id=10]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
-
-[sub_resource type="VisualShaderNodeScalarOp" id=11]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=11]
 
 [sub_resource type="VisualShaderNodeScalarOp" id=12]
 
 [sub_resource type="VisualShaderNodeScalarOp" id=13]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=14]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=14]
+[sub_resource type="VisualShaderNodeScalarUniform" id=15]
 uniform_name = "wind"
 
-[sub_resource type="VisualShaderNodeVec3Constant" id=15]
+[sub_resource type="VisualShaderNodeVec3Constant" id=16]
 constant = Vector3( 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=16]
-
 [sub_resource type="VisualShaderNodeVectorOp" id=17]
-operator = 2
 
 [sub_resource type="VisualShaderNodeVectorOp" id=18]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=19]
+[sub_resource type="VisualShaderNodeVectorOp" id=19]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=20]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=20]
+[sub_resource type="VisualShaderNodeScalarFunc" id=21]
 function = 0
 
-[sub_resource type="VisualShaderNodeInput" id=21]
+[sub_resource type="VisualShaderNodeInput" id=22]
 input_name = "vertex"
 
-[sub_resource type="VisualShader" id=22]
+[sub_resource type="VisualShader" id=23]
 code = "shader_type spatial;
 render_mode cull_disabled;
 
@@ -647,60 +645,60 @@ void light() {
 graph_offset = Vector2( -943, 221 )
 modes/cull = 2
 nodes/vertex/0/position = Vector2( 400, 160 )
-nodes/vertex/2/node = SubResource( 14 )
+nodes/vertex/2/node = SubResource( 15 )
 nodes/vertex/2/position = Vector2( -540, 220 )
-nodes/vertex/3/node = SubResource( 15 )
+nodes/vertex/3/node = SubResource( 16 )
 nodes/vertex/3/position = Vector2( -660, 300 )
-nodes/vertex/4/node = SubResource( 16 )
+nodes/vertex/4/node = SubResource( 17 )
 nodes/vertex/4/position = Vector2( 180, 160 )
-nodes/vertex/5/node = SubResource( 17 )
+nodes/vertex/5/node = SubResource( 18 )
 nodes/vertex/5/position = Vector2( -320, 220 )
-nodes/vertex/6/node = SubResource( 18 )
+nodes/vertex/6/node = SubResource( 19 )
 nodes/vertex/6/position = Vector2( 0, 160 )
-nodes/vertex/7/node = SubResource( 19 )
+nodes/vertex/7/node = SubResource( 20 )
 nodes/vertex/7/position = Vector2( -1100, 320 )
-nodes/vertex/8/node = SubResource( 20 )
+nodes/vertex/8/node = SubResource( 21 )
 nodes/vertex/8/position = Vector2( -320, 440 )
-nodes/vertex/9/node = SubResource( 21 )
+nodes/vertex/9/node = SubResource( 22 )
 nodes/vertex/9/position = Vector2( 20, 300 )
-nodes/vertex/10/node = SubResource( 7 )
+nodes/vertex/10/node = SubResource( 8 )
 nodes/vertex/10/position = Vector2( -500, 420 )
-nodes/vertex/11/node = SubResource( 8 )
+nodes/vertex/11/node = SubResource( 9 )
 nodes/vertex/11/position = Vector2( -700, 420 )
-nodes/vertex/12/node = SubResource( 9 )
+nodes/vertex/12/node = SubResource( 10 )
 nodes/vertex/12/position = Vector2( -1480, 520 )
-nodes/vertex/13/node = SubResource( 10 )
+nodes/vertex/13/node = SubResource( 11 )
 nodes/vertex/13/position = Vector2( -1300, 520 )
-nodes/vertex/14/node = SubResource( 11 )
+nodes/vertex/14/node = SubResource( 12 )
 nodes/vertex/14/position = Vector2( -860, 480 )
-nodes/vertex/15/node = SubResource( 12 )
+nodes/vertex/15/node = SubResource( 13 )
 nodes/vertex/15/position = Vector2( -1060, 580 )
-nodes/vertex/16/node = SubResource( 13 )
+nodes/vertex/16/node = SubResource( 14 )
 nodes/vertex/16/position = Vector2( -911, 362 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 5, 1, 5, 0, 6, 0, 6, 0, 4, 0, 9, 0, 4, 1, 4, 0, 0, 0, 12, 0, 13, 0, 13, 0, 14, 0, 14, 0, 11, 1, 13, 1, 15, 0, 15, 0, 14, 1, 13, 2, 15, 1, 10, 0, 8, 0, 11, 0, 10, 0, 7, 0, 16, 0, 16, 0, 11, 0, 8, 0, 6, 1 )
 nodes/fragment/0/position = Vector2( 420, 140 )
-nodes/fragment/2/node = SubResource( 4 )
+nodes/fragment/2/node = SubResource( 5 )
 nodes/fragment/2/position = Vector2( 80, 180 )
-nodes/fragment/3/node = SubResource( 5 )
+nodes/fragment/3/node = SubResource( 6 )
 nodes/fragment/3/position = Vector2( 80, 320 )
-nodes/fragment/4/node = SubResource( 6 )
+nodes/fragment/4/node = SubResource( 7 )
 nodes/fragment/4/position = Vector2( 140, 480 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 16 )
 
-[sub_resource type="ShaderMaterial" id=23]
-shader = SubResource( 22 )
+[sub_resource type="ShaderMaterial" id=24]
+shader = SubResource( 23 )
 shader_param/wind = 0.02
 shader_param/MainColor = Color( 0.0352941, 0.027451, 0.145098, 1 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=24]
+[sub_resource type="VisualShaderNodeColorUniform" id=25]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=25]
-
 [sub_resource type="VisualShaderNodeScalarConstant" id=26]
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=27]
 constant = 0.3
 
-[sub_resource type="VisualShader" id=27]
+[sub_resource type="VisualShader" id=28]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -739,27 +737,27 @@ void light() {
 }
 "
 graph_offset = Vector2( -424, 93 )
-nodes/fragment/2/node = SubResource( 24 )
+nodes/fragment/2/node = SubResource( 25 )
 nodes/fragment/2/position = Vector2( -20, 160 )
-nodes/fragment/3/node = SubResource( 25 )
+nodes/fragment/3/node = SubResource( 26 )
 nodes/fragment/3/position = Vector2( -20, 380 )
-nodes/fragment/4/node = SubResource( 26 )
+nodes/fragment/4/node = SubResource( 27 )
 nodes/fragment/4/position = Vector2( -40, 300 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 2 )
 
-[sub_resource type="ShaderMaterial" id=28]
-shader = SubResource( 27 )
+[sub_resource type="ShaderMaterial" id=29]
+shader = SubResource( 28 )
 shader_param/MainColor = Color( 0.996078, 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=29]
+[sub_resource type="VisualShaderNodeColorUniform" id=30]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=30]
+[sub_resource type="VisualShaderNodeScalarConstant" id=31]
 constant = 1.0
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=31]
+[sub_resource type="VisualShaderNodeScalarConstant" id=32]
 
-[sub_resource type="VisualShader" id=32]
+[sub_resource type="VisualShader" id=33]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -799,33 +797,33 @@ void light() {
 "
 graph_offset = Vector2( -424, 93 )
 nodes/fragment/0/position = Vector2( 400, 140 )
-nodes/fragment/2/node = SubResource( 29 )
+nodes/fragment/2/node = SubResource( 30 )
 nodes/fragment/2/position = Vector2( 20, 140 )
-nodes/fragment/3/node = SubResource( 30 )
+nodes/fragment/3/node = SubResource( 31 )
 nodes/fragment/3/position = Vector2( 20, 260 )
-nodes/fragment/4/node = SubResource( 31 )
+nodes/fragment/4/node = SubResource( 32 )
 nodes/fragment/4/position = Vector2( 20, 340 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 2, 4, 0, 0, 3 )
 
-[sub_resource type="ShaderMaterial" id=33]
-shader = SubResource( 32 )
+[sub_resource type="ShaderMaterial" id=34]
+shader = SubResource( 33 )
 shader_param/MainColor = Color( 1, 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=34]
+[sub_resource type="SpatialMaterial" id=35]
 albedo_color = Color( 0.466667, 0.14902, 0.215686, 1 )
 metallic_specular = 0.0
 roughness = 0.58
 
-[sub_resource type="SpatialMaterial" id=35]
+[sub_resource type="SpatialMaterial" id=36]
 albedo_color = Color( 0.113725, 0.101961, 0.101961, 1 )
 metallic_specular = 0.0
 roughness = 0.56
 
-[sub_resource type="CylinderShape" id=36]
+[sub_resource type="CylinderShape" id=37]
 radius = 1.80318
 height = 2.11138
 
-[sub_resource type="CapsuleShape" id=37]
+[sub_resource type="CapsuleShape" id=38]
 radius = 0.709919
 height = 2.4472
 
@@ -843,13 +841,13 @@ deadZone = 0.35
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/attack = SubResource( 38 )
-anims/idle = SubResource( 1 )
-anims/run = SubResource( 2 )
+anims/attack = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/run = SubResource( 3 )
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="body" type="MeshInstance" parent="."]
 transform = Transform( 0.986854, 0.091125, 0.133468, -0.068515, 0.983885, -0.16515, -0.146367, 0.153835, 0.977195, 0.0353482, 0.406165, 0.0987653 )
@@ -864,7 +862,7 @@ material/1 = ExtResource( 7 )
 
 [node name="hair" type="MeshInstance" parent="head"]
 mesh = ExtResource( 4 )
-material/0 = SubResource( 23 )
+material/0 = SubResource( 24 )
 
 [node name="leg" type="MeshInstance" parent="."]
 transform = Transform( 0.382454, -0.0784304, 0.104857, 0.00325771, 0.543856, 0.168914, -0.117125, -0.240976, 0.347092, 0.53924, -0.793177, -0.0091058 )
@@ -895,10 +893,10 @@ __meta__ = {
 [node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
 transform = Transform( -1.06171e-07, -1, 9.31323e-10, 1, 6.70552e-08, 0, -2.98023e-08, -7.45058e-08, 1, -0.0230027, 0.0356097, -0.096683 )
 mesh = ExtResource( 9 )
-material/0 = SubResource( 28 )
-material/1 = SubResource( 33 )
-material/2 = SubResource( 34 )
-material/3 = SubResource( 35 )
+material/0 = SubResource( 29 )
+material/1 = SubResource( 34 )
+material/2 = SubResource( 35 )
+material/3 = SubResource( 36 )
 
 [node name="SwordArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.26134 )
@@ -906,7 +904,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="SwordCollisionShape" type="CollisionShape" parent="SwordArea"]
-shape = SubResource( 36 )
+shape = SubResource( 37 )
 
 [node name="DamageArea" type="Area" parent="."]
 collision_layer = 0
@@ -914,5 +912,5 @@ collision_mask = 4
 
 [node name="ContactDamageCollisionShape" type="CollisionShape" parent="DamageArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 37 )
+shape = SubResource( 38 )
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
