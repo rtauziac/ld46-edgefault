@@ -183,65 +183,235 @@ tracks/13/keys = {
 "values": [ Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=2]
 resource_name = "run"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.0135938, 0.354183, -0.0314205 ), Vector3( 0.0135938, 0.476542, -0.0711923 ), Vector3( 0.0135938, 0.379501, -0.0513064 ), Vector3( 0.0135938, 0.476542, -0.0115346 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -20.3029, 6.45673, -0.851227 ), Vector3( -21.5724, -7.08579, -9.73994 ), Vector3( -20.3029, -1.90561, -0.851227 ), Vector3( -21.9022, 12.2559, 6.2594 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("leg:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.341834, -0.916114, -0.644751 ), Vector3( 0.341834, -0.930992, 0.568443 ), Vector3( 0.341834, -0.923553, 0.157221 ), Vector3( 0.341834, -0.908676, -0.665222 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("leg:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 7.11111, -89.4466, -4.75126 ), Vector3( 1.37658, -91.0988, 90.2207 ), Vector3( 4.24385, -90.2727, 42.7347 ), Vector3( 9.97838, -88.6204, -52.2372 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("leg2:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.402068, -0.813095, 0.179202 ), Vector3( -0.3443, -0.857969, -0.611734 ), Vector3( -0.373184, -0.835531, -0.482961 ), Vector3( -0.430953, -0.790658, 0.574669 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("leg2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -45.0589, 4.89604, -0.990021 ), Vector3( 42.7889, 0.175073, 3.92619 ), Vector3( -1.13497, 2.53556, 1.46809 ), Vector3( -88.9828, 7.25652, -3.44813 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("arm:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.526855, 0.648716, 0.501127 ), Vector3( 0.609101, 0.384452, 0.181359 ), Vector3( 0.773594, 0.267125, -0.458179 ), Vector3( 0.691348, 0.271915, -0.13841 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("arm:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -23.2979, -6.31049, 19.7328 ), Vector3( 3.62218, 8.95786, 15.8475 ), Vector3( 57.4623, 39.4946, 8.07673 ), Vector3( 30.5422, 24.2262, 11.9621 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("head:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.0134749, 1.29572, -0.182619 ), Vector3( 0.0128398, 1.09192, -0.308296 ), Vector3( 0.0134749, 1.29572, -0.182619 ), Vector3( 0.0128398, 1.09192, -0.308296 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("head:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("arm2:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.675056, 0.213088, -0.656616 ), Vector3( -0.675056, 0.122695, -0.304732 ), Vector3( -0.675056, 0.660437, 0.399034 ), Vector3( -0.675056, 0.352531, 0.047151 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("arm2:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 38.1977, -85.5288, -41.6216 ), Vector3( 12.668, -73.7925, -17.1758 ), Vector3( -13.9704, -82.6009, 46.6021 ), Vector3( -5.5655, -59.9194, -5.98968 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sword:translation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.732274, 0.0733281, 0.808638 ), Vector3( 0.865337, -0.209198, 0.136284 ), Vector3( 0.466413, -0.0807424, -0.953198 ), Vector3( 0.707756, -0.353132, -0.642797 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sword:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -80.288, 171.097, 166.88 ), Vector3( -84.9924, -20.6435, 12.3463 ), Vector3( -58.8457, 9.74199, 5.59204 ), Vector3( -52.1207, 10.8111, 4.70957 ) ]
+}
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=3]
 radius = 0.580333
 height = 2.5154
 
-[sub_resource type="VisualShaderNodeColorUniform" id=3]
+[sub_resource type="VisualShaderNodeColorUniform" id=4]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=4]
+[sub_resource type="VisualShaderNodeScalarConstant" id=5]
 constant = 0.3
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=5]
+[sub_resource type="VisualShaderNodeScalarConstant" id=6]
 constant = 0.2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=6]
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=7]
+[sub_resource type="VisualShaderNodeScalarOp" id=8]
 
-[sub_resource type="VisualShaderNodeInput" id=8]
+[sub_resource type="VisualShaderNodeInput" id=9]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=9]
-
-[sub_resource type="VisualShaderNodeScalarOp" id=10]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
 
 [sub_resource type="VisualShaderNodeScalarOp" id=11]
 
 [sub_resource type="VisualShaderNodeScalarOp" id=12]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=13]
+[sub_resource type="VisualShaderNodeScalarUniform" id=14]
 uniform_name = "wind"
 
-[sub_resource type="VisualShaderNodeVec3Constant" id=14]
+[sub_resource type="VisualShaderNodeVec3Constant" id=15]
 constant = Vector3( 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=15]
-
 [sub_resource type="VisualShaderNodeVectorOp" id=16]
-operator = 2
 
 [sub_resource type="VisualShaderNodeVectorOp" id=17]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=18]
+[sub_resource type="VisualShaderNodeVectorOp" id=18]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=19]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=19]
+[sub_resource type="VisualShaderNodeScalarFunc" id=20]
 function = 0
 
-[sub_resource type="VisualShaderNodeInput" id=20]
+[sub_resource type="VisualShaderNodeInput" id=21]
 input_name = "vertex"
 
-[sub_resource type="VisualShader" id=21]
+[sub_resource type="VisualShader" id=22]
 code = "shader_type spatial;
 render_mode cull_disabled;
 
@@ -352,60 +522,60 @@ void light() {
 graph_offset = Vector2( -943, 221 )
 modes/cull = 2
 nodes/vertex/0/position = Vector2( 400, 160 )
-nodes/vertex/2/node = SubResource( 13 )
+nodes/vertex/2/node = SubResource( 14 )
 nodes/vertex/2/position = Vector2( -540, 220 )
-nodes/vertex/3/node = SubResource( 14 )
+nodes/vertex/3/node = SubResource( 15 )
 nodes/vertex/3/position = Vector2( -660, 300 )
-nodes/vertex/4/node = SubResource( 15 )
+nodes/vertex/4/node = SubResource( 16 )
 nodes/vertex/4/position = Vector2( 180, 160 )
-nodes/vertex/5/node = SubResource( 16 )
+nodes/vertex/5/node = SubResource( 17 )
 nodes/vertex/5/position = Vector2( -320, 220 )
-nodes/vertex/6/node = SubResource( 17 )
+nodes/vertex/6/node = SubResource( 18 )
 nodes/vertex/6/position = Vector2( 0, 160 )
-nodes/vertex/7/node = SubResource( 18 )
+nodes/vertex/7/node = SubResource( 19 )
 nodes/vertex/7/position = Vector2( -1100, 320 )
-nodes/vertex/8/node = SubResource( 19 )
+nodes/vertex/8/node = SubResource( 20 )
 nodes/vertex/8/position = Vector2( -320, 440 )
-nodes/vertex/9/node = SubResource( 20 )
+nodes/vertex/9/node = SubResource( 21 )
 nodes/vertex/9/position = Vector2( 20, 300 )
-nodes/vertex/10/node = SubResource( 6 )
+nodes/vertex/10/node = SubResource( 7 )
 nodes/vertex/10/position = Vector2( -500, 420 )
-nodes/vertex/11/node = SubResource( 7 )
+nodes/vertex/11/node = SubResource( 8 )
 nodes/vertex/11/position = Vector2( -700, 420 )
-nodes/vertex/12/node = SubResource( 8 )
+nodes/vertex/12/node = SubResource( 9 )
 nodes/vertex/12/position = Vector2( -1480, 520 )
-nodes/vertex/13/node = SubResource( 9 )
+nodes/vertex/13/node = SubResource( 10 )
 nodes/vertex/13/position = Vector2( -1300, 520 )
-nodes/vertex/14/node = SubResource( 10 )
+nodes/vertex/14/node = SubResource( 11 )
 nodes/vertex/14/position = Vector2( -860, 480 )
-nodes/vertex/15/node = SubResource( 11 )
+nodes/vertex/15/node = SubResource( 12 )
 nodes/vertex/15/position = Vector2( -1060, 580 )
-nodes/vertex/16/node = SubResource( 12 )
+nodes/vertex/16/node = SubResource( 13 )
 nodes/vertex/16/position = Vector2( -911, 362 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 5, 1, 5, 0, 6, 0, 6, 0, 4, 0, 9, 0, 4, 1, 4, 0, 0, 0, 12, 0, 13, 0, 13, 0, 14, 0, 14, 0, 11, 1, 13, 1, 15, 0, 15, 0, 14, 1, 13, 2, 15, 1, 10, 0, 8, 0, 11, 0, 10, 0, 7, 0, 16, 0, 16, 0, 11, 0, 8, 0, 6, 1 )
 nodes/fragment/0/position = Vector2( 420, 140 )
-nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/node = SubResource( 4 )
 nodes/fragment/2/position = Vector2( 80, 180 )
-nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/node = SubResource( 5 )
 nodes/fragment/3/position = Vector2( 80, 320 )
-nodes/fragment/4/node = SubResource( 5 )
+nodes/fragment/4/node = SubResource( 6 )
 nodes/fragment/4/position = Vector2( 140, 480 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 16 )
 
-[sub_resource type="ShaderMaterial" id=22]
-shader = SubResource( 21 )
+[sub_resource type="ShaderMaterial" id=23]
+shader = SubResource( 22 )
 shader_param/wind = 0.012
 shader_param/MainColor = Color( 0.0352941, 0.027451, 0.145098, 1 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=26]
+[sub_resource type="VisualShaderNodeColorUniform" id=24]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=27]
+[sub_resource type="VisualShaderNodeScalarConstant" id=25]
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=28]
+[sub_resource type="VisualShaderNodeScalarConstant" id=26]
 constant = 0.3
 
-[sub_resource type="VisualShader" id=29]
+[sub_resource type="VisualShader" id=27]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -444,27 +614,27 @@ void light() {
 }
 "
 graph_offset = Vector2( -424, 93 )
-nodes/fragment/2/node = SubResource( 26 )
+nodes/fragment/2/node = SubResource( 24 )
 nodes/fragment/2/position = Vector2( -20, 160 )
-nodes/fragment/3/node = SubResource( 27 )
+nodes/fragment/3/node = SubResource( 25 )
 nodes/fragment/3/position = Vector2( -20, 380 )
-nodes/fragment/4/node = SubResource( 28 )
+nodes/fragment/4/node = SubResource( 26 )
 nodes/fragment/4/position = Vector2( -40, 300 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 2 )
 
-[sub_resource type="ShaderMaterial" id=30]
-shader = SubResource( 29 )
+[sub_resource type="ShaderMaterial" id=28]
+shader = SubResource( 27 )
 shader_param/MainColor = Color( 0.996078, 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=31]
+[sub_resource type="VisualShaderNodeColorUniform" id=29]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=32]
+[sub_resource type="VisualShaderNodeScalarConstant" id=30]
 constant = 1.0
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=33]
+[sub_resource type="VisualShaderNodeScalarConstant" id=31]
 
-[sub_resource type="VisualShader" id=34]
+[sub_resource type="VisualShader" id=32]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -504,33 +674,33 @@ void light() {
 "
 graph_offset = Vector2( -424, 93 )
 nodes/fragment/0/position = Vector2( 400, 140 )
-nodes/fragment/2/node = SubResource( 31 )
+nodes/fragment/2/node = SubResource( 29 )
 nodes/fragment/2/position = Vector2( 20, 140 )
-nodes/fragment/3/node = SubResource( 32 )
+nodes/fragment/3/node = SubResource( 30 )
 nodes/fragment/3/position = Vector2( 20, 260 )
-nodes/fragment/4/node = SubResource( 33 )
+nodes/fragment/4/node = SubResource( 31 )
 nodes/fragment/4/position = Vector2( 20, 340 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 2, 4, 0, 0, 3 )
 
-[sub_resource type="ShaderMaterial" id=35]
-shader = SubResource( 34 )
+[sub_resource type="ShaderMaterial" id=33]
+shader = SubResource( 32 )
 shader_param/MainColor = Color( 1, 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=36]
+[sub_resource type="SpatialMaterial" id=34]
 albedo_color = Color( 0.466667, 0.14902, 0.215686, 1 )
 metallic_specular = 0.0
 roughness = 0.58
 
-[sub_resource type="SpatialMaterial" id=37]
+[sub_resource type="SpatialMaterial" id=35]
 albedo_color = Color( 0.113725, 0.101961, 0.101961, 1 )
 metallic_specular = 0.0
 roughness = 0.56
 
-[sub_resource type="CylinderShape" id=24]
+[sub_resource type="CylinderShape" id=36]
 radius = 2.07836
 height = 2.11138
 
-[sub_resource type="CapsuleShape" id=25]
+[sub_resource type="CapsuleShape" id=37]
 radius = 0.709919
 height = 2.4472
 
@@ -549,57 +719,60 @@ deadZone = 0.35
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 1 )
-anims/run = SubResource( 38 )
+anims/run = SubResource( 2 )
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="body" type="MeshInstance" parent="."]
-transform = Transform( 0.905272, 0.00796599, 0.424758, -0.16783, 0.925204, 0.340339, -0.390277, -0.379386, 0.838898, 0.0134749, 0.384237, -0.0384486 )
+transform = Transform( 0.96275, -0.185257, 0.196956, 0.10116, 0.92229, 0.373023, -0.250756, -0.339204, 0.906676, 0.0135938, 0.476542, -0.0115346 )
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 6 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.14918, -0.328257 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.29572, -0.182619 )
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 7 )
 
 [node name="hair" type="MeshInstance" parent="head"]
 mesh = ExtResource( 4 )
-material/0 = SubResource( 22 )
+material/0 = SubResource( 23 )
 
 [node name="leg" type="MeshInstance" parent="."]
-transform = Transform( 0.374203, -0.1724, 0.0822321, 0.0434464, 0.47256, 0.242615, -0.134477, -0.327055, 0.307206, 0.341834, -0.998493, -0.0388036 )
-mesh = ExtResource( 8 )
-material/0 = ExtResource( 5 )
-
-[node name="Sword" type="Spatial" parent="."]
-transform = Transform( 0.921238, -0.181317, 0.286975, -0.0481056, 0.733117, 0.75779, -0.302611, -0.668525, 0.753173, 1.08847, 0.0216498, -1.03921 )
-
-[node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
-transform = Transform( -1.06171e-07, -1, 9.31323e-10, 1, 6.70552e-08, 0, -2.98023e-08, -7.45058e-08, 1, -0.0230027, 0.0356097, -0.096683 )
-mesh = ExtResource( 9 )
-material/0 = SubResource( 30 )
-material/1 = SubResource( 35 )
-material/2 = SubResource( 36 )
-material/3 = SubResource( 37 )
-
-[node name="arm" type="MeshInstance" parent="."]
-transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871714, 0.803231, 0.244947, -0.417931 )
-mesh = ExtResource( 8 )
-material/0 = ExtResource( 5 )
-
-[node name="arm2" type="MeshInstance" parent="."]
-transform = Transform( 0.266495, 0.104822, 0.113138, 0.0184604, 0.298352, -0.19897, -0.136528, 0.244946, 0.193935, -0.793756, 0.156648, -0.238585 )
+transform = Transform( 0.0606753, -0.0522298, -0.393835, -0.311438, 0.361878, -0.0693106, 0.243567, 0.475727, 0.00948453, 0.341834, -0.908676, -0.665222 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="leg2" type="MeshInstance" parent="."]
-transform = Transform( 0.389095, 0.135756, -0.0203611, -0.0841044, 0.571807, 0.0872308, 0.0391413, -0.120857, 0.389841, -0.517582, -0.829423, -0.309619 )
+transform = Transform( 0.399117, -0.0398401, 0.000896953, -0.000427095, 0.0106324, 0.399937, -0.0265718, -0.598581, 0.00704422, -0.430953, -0.790658, 0.574669 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
+
+[node name="arm" type="MeshInstance" parent="."]
+transform = Transform( 0.285076, -0.117867, -0.0302862, 0.0930313, 0.345811, 0.118653, -0.00878019, -0.162857, 0.273869, 0.526855, 0.648716, 0.501127 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="arm2" type="MeshInstance" parent="."]
+transform = Transform( 0.140328, -0.163632, -0.235047, -0.156597, 0.234993, -0.185513, 0.213976, 0.27929, 0.0183796, -0.675056, 0.213088, -0.656616 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="Sword" type="Spatial" parent="."]
+transform = Transform( 0.900513, 0.376009, 0.0288813, 0.0371756, -0.165705, 1.09043, 0.360918, -0.921098, -0.184378, 0.732274, 0.0733281, 0.808638 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
+transform = Transform( -1.06171e-07, -1, 9.31323e-10, 1, 6.70552e-08, 0, -2.98023e-08, -7.45058e-08, 1, -0.0230027, 0.0356097, -0.096683 )
+mesh = ExtResource( 9 )
+material/0 = SubResource( 28 )
+material/1 = SubResource( 33 )
+material/2 = SubResource( 34 )
+material/3 = SubResource( 35 )
 
 [node name="SwordArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8451 )
@@ -607,14 +780,13 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="SwordCollisionShape" type="CollisionShape" parent="SwordArea"]
-shape = SubResource( 24 )
+shape = SubResource( 36 )
 
 [node name="DamageArea" type="Area" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="ContactDamageCollisionShape" type="CollisionShape" parent="DamageArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 25 )
+shape = SubResource( 37 )
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
