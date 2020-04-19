@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/samurai_body.obj-f5e3922106f8344495ab2a52d268a226.mesh"
+
+[deps]
+
+files=[ "res://.import/samurai_body.obj-f5e3922106f8344495ab2a52d268a226.mesh" ]
+
+source_file="res://Player/samurai_body.obj"
+dest_files=[ "res://.import/samurai_body.obj-f5e3922106f8344495ab2a52d268a226.mesh", "res://.import/samurai_body.obj-f5e3922106f8344495ab2a52d268a226.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
