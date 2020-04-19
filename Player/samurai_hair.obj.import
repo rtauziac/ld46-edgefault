@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/samurai_hair.obj-0b182809587a167ffc2c43d0e7d18541.mesh"
+
+[deps]
+
+files=[ "res://.import/samurai_hair.obj-0b182809587a167ffc2c43d0e7d18541.mesh" ]
+
+source_file="res://Player/samurai_hair.obj"
+dest_files=[ "res://.import/samurai_hair.obj-0b182809587a167ffc2c43d0e7d18541.mesh", "res://.import/samurai_hair.obj-0b182809587a167ffc2c43d0e7d18541.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

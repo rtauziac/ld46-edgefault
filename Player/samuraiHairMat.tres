@@ -1,0 +1,64 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[sub_resource type="VisualShaderNodeColorUniform" id=1]
+uniform_name = "MainColor"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=2]
+constant = 0.3
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=3]
+constant = 0.4
+
+[sub_resource type="VisualShader" id=4]
+code = "shader_type spatial;
+render_mode cull_disabled;
+
+uniform vec4 MainColor : hint_color;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	n_out2p0 = MainColor.rgb;
+	n_out2p1 = MainColor.a;
+
+// Scalar:3
+	float n_out3p0;
+	n_out3p0 = 0.300000;
+
+// Scalar:4
+	float n_out4p0;
+	n_out4p0 = 0.400000;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ROUGHNESS = n_out3p0;
+	SSS_STRENGTH = n_out4p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -443, 212.645 )
+modes/cull = 2
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( 80, 180 )
+nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/position = Vector2( 80, 320 )
+nodes/fragment/4/node = SubResource( 3 )
+nodes/fragment/4/position = Vector2( 140, 480 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 16 )
+
+[resource]
+shader = SubResource( 4 )
+shader_param/MainColor = Color( 0.0352941, 0.027451, 0.145098, 1 )
