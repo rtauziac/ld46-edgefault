@@ -1,24 +1,211 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Scorpion/Scorpion.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Scorpion/scorpion.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.36077, 1.19543, 3.09344 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="Animation" id=2]
+resource_name = "walk"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/leg:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 2.19966, 1.10129, -1.62611 ), Vector3( 1.64962, 1.10129, -1.18595 ), Vector3( 1.94993, 1.59128, -1.3691 ), Vector3( 1.94993, 0.908656, -1.05621 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/leg:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 28.3837, 10.5229, 36.9872 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/leg2:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1.77466, 1.43296, -0.228473 ), Vector3( 1.77466, 1.66181, -0.0861306 ), Vector3( 2.3036, 1.3592, -0.382857 ), Vector3( 1.76714, 1.3592, -0.194389 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationPlayer/leg2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 47.14 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationPlayer/leg3:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1.9353, 1.53241, 0.995748 ), Vector3( 2.21996, 1.64245, 0.76045 ), Vector3( 1.80859, 1.39293, 0.564276 ), Vector3( 1.89744, 1.39293, 1.0821 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimationPlayer/leg3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 8.9432e-08, -14.052, 31.941 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimationPlayer/leg6:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -1.76477, 1.52, 1.48518 ), Vector3( -1.9696, 1.19033, 1.13881 ), Vector3( -1.74031, 1.5703, 0.887686 ), Vector3( -2.04148, 0.956475, 1.5526 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimationPlayer/leg6:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 3.01878e-07, -170.754, 31.941 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AnimationPlayer/leg5:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -2.08094, 0.787583, -0.205454 ), Vector3( -1.77994, 1.04526, -0.156282 ), Vector3( -1.87557, 1.30025, 0.0724523 ), Vector3( -1.81897, 0.878446, 0.0724523 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AnimationPlayer/leg5:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 9.23497e-13, -180, 47.14 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("AnimationPlayer/leg4:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -2.05281, 1.25815, -1.49949 ), Vector3( -2.05281, 1.14755, -1.20556 ), Vector3( -1.92753, 0.705423, -1.20556 ), Vector3( -2.06626, 1.31646, -0.944195 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("AnimationPlayer/leg4:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( -27.8539, 164.061, 39.5415 ) ]
+}
 
 [node name="Scorpion" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15528, 0 )
 collision_layer = 4
-collision_mask = 35
+collision_mask = 39
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "Scorpion"
 }
 speed = 250.0
 
-[node name="CollisionPolygon" type="CollisionShape" parent="."]
+[node name="MainCollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+playback_process_mode = 0
+anims/walk = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888194, 0.0750964 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="leg" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( 0.502541, -0.522172, 0.0964042, 0.317586, 0.702745, -0.285224, 0.0811887, 0.483204, 0.518993, 2.19966, 1.10129, -1.62611 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="leg2" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( 0.408126, -0.733018, 0, 0.439811, 0.680209, 0, 0, 0, 0.6, 1.77466, 1.43296, -0.228473 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="leg3" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( 0.49392, -0.513214, -0.145681, 0.317427, 0.848593, -9.3653e-10, 0.123624, -0.128453, 0.582045, 1.9353, 1.53241, 0.995748 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="leg6" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( -0.502541, 0.522172, -0.0964042, 0.317427, 0.848593, -3.16126e-09, 0.0818079, -0.0850037, -0.592205, -1.76477, 1.52, 1.48518 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="leg5" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( -0.408126, 0.733018, -9.05975e-08, 0.439811, 0.680209, -9.67083e-15, 6.16252e-08, -1.10683e-07, -0.6, -2.08094, 0.787583, -0.205454 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="leg4" type="MeshInstance" parent="AnimationPlayer"]
+transform = Transform( -0.49392, 0.513215, 0.145681, 0.337727, 0.681818, 0.280331, 0.044542, 0.521282, -0.51009, -2.05281, 1.25815, -1.49949 )
+mesh = ExtResource( 3 )
 material/0 = null
