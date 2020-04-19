@@ -16,12 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="LD46"
-run/main_scene="res://Root.tscn"
+run/main_scene="res://PostEffect.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalNodeReferences="*res://GlobalNodeReferences.gd"
+
+[display]
+
+window/size/fullscreen=true
 
 [input]
 

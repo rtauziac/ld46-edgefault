@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Player/Player.vs" type="Script" id=1]
 [ext_resource path="res://Player/samurai_body.obj" type="ArrayMesh" id=2]
@@ -10,163 +10,9 @@
 [ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://Player/blade.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Player/woosh.png" type="Texture" id=10]
+[ext_resource path="res://Player/eye.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
-resource_name = "attack"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("body:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( 0.0308283, 0.390473, 0.0756346 ), Vector3( 0.0317664, 0.346329, -0.0046466 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("body:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( -3.09314, 8.64904, -3.93444 ), Vector3( -14.8443, 7.93655, -7.32119 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("head:translation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( 0.0134749, 1.20067, -0.0736638 ), Vector3( 0.0134749, 1.13346, -0.168394 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("head:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("leg2:translation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( -0.478122, -0.744893, -0.326473 ), Vector3( -0.625889, -0.690241, -0.315327 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("leg2:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( -12.5961, -2.9898, -16.9747 ), Vector3( -12.5961, -2.9898, -9.7117 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("leg:translation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( 0.513468, -0.834693, -0.0944141 ), Vector3( 0.53924, -0.793177, -0.0091058 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("leg:rotation_degrees")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( -24.9789, 16.8096, 0.51479 ), Vector3( -24.9789, 16.8096, 0.51479 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("arm2:translation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( -0.698776, 0.106621, 0.254573 ), Vector3( -0.698776, 0.156648, 0.440458 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("arm2:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector3( 44.9077, 68.8395, 4.11007 ), Vector3( 53.4575, 79.3515, -1.51188 ) ]
-}
-tracks/10/type = "method"
-tracks/10/path = NodePath(".")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ "idle", 1.0, true ],
-"method": "playAnimation"
-} ]
-}
-tracks/11/type = "method"
-tracks/11/path = NodePath(".")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ true ],
-"method": "setAttackSpriteAndMeshVisibility"
-}, {
-"args": [ false ],
-"method": "setAttackSpriteAndMeshVisibility"
-} ]
-}
-
-[sub_resource type="Animation" id=2]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -338,7 +184,7 @@ tracks/13/keys = {
 "values": [ Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -510,19 +356,69 @@ tracks/13/keys = {
 "values": [ Vector3( -80.288, 171.097, 166.88 ), Vector3( -84.9924, -20.6435, 12.3463 ), Vector3( -58.8457, 9.74199, 5.59204 ), Vector3( -52.1207, 10.8111, 4.70957 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "IsAttacking_set"
+}, {
+"args": [ false ],
+"method": "IsAttacking_set"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "setAttackSpriteAndMeshVisibility"
+}, {
+"args": [ false ],
+"method": "setAttackSpriteAndMeshVisibility"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Woosh/Horizontal:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.341511, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -90, 0 ), Vector3( 0, 20, 0 ) ]
+}
+
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.580333
 height = 2.5154
 
-[sub_resource type="VisualShaderNodeColorUniform" id=25]
+[sub_resource type="VisualShaderNodeColorUniform" id=5]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=26]
+[sub_resource type="VisualShaderNodeScalarConstant" id=6]
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=27]
+[sub_resource type="VisualShaderNodeScalarConstant" id=7]
 constant = 0.3
 
-[sub_resource type="VisualShader" id=28]
+[sub_resource type="VisualShader" id=8]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -561,27 +457,27 @@ void light() {
 }
 "
 graph_offset = Vector2( -424, 93 )
-nodes/fragment/2/node = SubResource( 25 )
+nodes/fragment/2/node = SubResource( 5 )
 nodes/fragment/2/position = Vector2( -20, 160 )
-nodes/fragment/3/node = SubResource( 26 )
+nodes/fragment/3/node = SubResource( 6 )
 nodes/fragment/3/position = Vector2( -20, 380 )
-nodes/fragment/4/node = SubResource( 27 )
+nodes/fragment/4/node = SubResource( 7 )
 nodes/fragment/4/position = Vector2( -40, 300 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 2 )
 
-[sub_resource type="ShaderMaterial" id=29]
-shader = SubResource( 28 )
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
 shader_param/MainColor = Color( 0.996078, 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=30]
+[sub_resource type="VisualShaderNodeColorUniform" id=10]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=31]
+[sub_resource type="VisualShaderNodeScalarConstant" id=11]
 constant = 1.0
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=32]
+[sub_resource type="VisualShaderNodeScalarConstant" id=12]
 
-[sub_resource type="VisualShader" id=33]
+[sub_resource type="VisualShader" id=13]
 code = "shader_type spatial;
 uniform vec4 MainColor : hint_color;
 
@@ -621,80 +517,88 @@ void light() {
 "
 graph_offset = Vector2( -424, 93 )
 nodes/fragment/0/position = Vector2( 400, 140 )
-nodes/fragment/2/node = SubResource( 30 )
+nodes/fragment/2/node = SubResource( 10 )
 nodes/fragment/2/position = Vector2( 20, 140 )
-nodes/fragment/3/node = SubResource( 31 )
+nodes/fragment/3/node = SubResource( 11 )
 nodes/fragment/3/position = Vector2( 20, 260 )
-nodes/fragment/4/node = SubResource( 32 )
+nodes/fragment/4/node = SubResource( 12 )
 nodes/fragment/4/position = Vector2( 20, 340 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 2, 4, 0, 0, 3 )
 
-[sub_resource type="ShaderMaterial" id=34]
-shader = SubResource( 33 )
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
 shader_param/MainColor = Color( 1, 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=35]
+[sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 0.466667, 0.14902, 0.215686, 1 )
 metallic_specular = 0.0
 roughness = 0.58
 
-[sub_resource type="SpatialMaterial" id=36]
+[sub_resource type="SpatialMaterial" id=16]
 albedo_color = Color( 0.113725, 0.101961, 0.101961, 1 )
 metallic_specular = 0.0
 roughness = 0.56
 
-[sub_resource type="VisualShaderNodeColorUniform" id=5]
+[sub_resource type="VisualShaderNodeColorUniform" id=17]
 uniform_name = "MainColor"
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=6]
+[sub_resource type="VisualShaderNodeScalarConstant" id=18]
 constant = 0.3
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=7]
+[sub_resource type="VisualShaderNodeScalarConstant" id=19]
 constant = 0.2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=8]
+[sub_resource type="VisualShaderNodeVectorScalarMix" id=20]
+
+[sub_resource type="VisualShaderNodeColorConstant" id=21]
+constant = Color( 1, 0.984375, 0.984375, 1 )
+
+[sub_resource type="VisualShaderNodeFresnel" id=22]
+default_input_values = [ 2, false, 3, 5.0 ]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=23]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarOp" id=9]
+[sub_resource type="VisualShaderNodeScalarOp" id=24]
 
-[sub_resource type="VisualShaderNodeInput" id=10]
+[sub_resource type="VisualShaderNodeInput" id=25]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=11]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=26]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=12]
+[sub_resource type="VisualShaderNodeScalarOp" id=27]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=13]
+[sub_resource type="VisualShaderNodeScalarOp" id=28]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=14]
+[sub_resource type="VisualShaderNodeScalarOp" id=29]
 default_input_values = [ 0, 0.0, 1, 3.0 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=15]
+[sub_resource type="VisualShaderNodeScalarUniform" id=30]
 uniform_name = "wind"
 
-[sub_resource type="VisualShaderNodeVec3Constant" id=16]
+[sub_resource type="VisualShaderNodeVec3Constant" id=31]
 constant = Vector3( 1, 1, 1 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=17]
+[sub_resource type="VisualShaderNodeVectorOp" id=32]
 
-[sub_resource type="VisualShaderNodeVectorOp" id=18]
+[sub_resource type="VisualShaderNodeVectorOp" id=33]
 operator = 2
 
-[sub_resource type="VisualShaderNodeVectorOp" id=19]
+[sub_resource type="VisualShaderNodeVectorOp" id=34]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=20]
+[sub_resource type="VisualShaderNodeInput" id=35]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=21]
+[sub_resource type="VisualShaderNodeScalarFunc" id=36]
 function = 0
 
-[sub_resource type="VisualShaderNodeInput" id=22]
+[sub_resource type="VisualShaderNodeInput" id=37]
 input_name = "vertex"
 
-[sub_resource type="VisualShader" id=23]
+[sub_resource type="VisualShader" id=38]
 code = "shader_type spatial;
 render_mode cull_disabled;
 
@@ -782,6 +686,21 @@ void fragment() {
 	n_out2p0 = MainColor.rgb;
 	n_out2p1 = MainColor.a;
 
+// Color:6
+	vec3 n_out6p0;
+	float n_out6p1;
+	n_out6p0 = vec3(1.000000,0.984375,0.984375);
+	n_out6p1 = 1.000000;
+
+// Fresnel:7
+	bool n_in7p2 = false;
+	float n_in7p3 = 5.00000;
+	float n_out7p0;
+	n_out7p0 = n_in7p2 ? (pow(clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3)) : (pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3));
+// VectorScalarMix:5
+	vec3 n_out5p0;
+	n_out5p0 = mix( n_out2p0 , n_out6p0 , n_out7p0 );
+
 // Scalar:3
 	float n_out3p0;
 	n_out3p0 = 0.300000;
@@ -791,7 +710,7 @@ void fragment() {
 	n_out4p0 = 0.200000;
 
 // Output:0
-	ALBEDO = n_out2p0;
+	ALBEDO = n_out5p0;
 	ROUGHNESS = n_out3p0;
 	SSS_STRENGTH = n_out4p0;
 
@@ -802,59 +721,65 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -943, 221 )
+graph_offset = Vector2( -673, 69 )
 modes/cull = 2
 nodes/vertex/0/position = Vector2( 400, 160 )
-nodes/vertex/2/node = SubResource( 15 )
+nodes/vertex/2/node = SubResource( 30 )
 nodes/vertex/2/position = Vector2( -540, 220 )
-nodes/vertex/3/node = SubResource( 16 )
+nodes/vertex/3/node = SubResource( 31 )
 nodes/vertex/3/position = Vector2( -660, 300 )
-nodes/vertex/4/node = SubResource( 17 )
+nodes/vertex/4/node = SubResource( 32 )
 nodes/vertex/4/position = Vector2( 180, 160 )
-nodes/vertex/5/node = SubResource( 18 )
+nodes/vertex/5/node = SubResource( 33 )
 nodes/vertex/5/position = Vector2( -320, 220 )
-nodes/vertex/6/node = SubResource( 19 )
+nodes/vertex/6/node = SubResource( 34 )
 nodes/vertex/6/position = Vector2( 0, 160 )
-nodes/vertex/7/node = SubResource( 20 )
+nodes/vertex/7/node = SubResource( 35 )
 nodes/vertex/7/position = Vector2( -1100, 320 )
-nodes/vertex/8/node = SubResource( 21 )
+nodes/vertex/8/node = SubResource( 36 )
 nodes/vertex/8/position = Vector2( -320, 440 )
-nodes/vertex/9/node = SubResource( 22 )
+nodes/vertex/9/node = SubResource( 37 )
 nodes/vertex/9/position = Vector2( 20, 300 )
-nodes/vertex/10/node = SubResource( 8 )
+nodes/vertex/10/node = SubResource( 23 )
 nodes/vertex/10/position = Vector2( -500, 420 )
-nodes/vertex/11/node = SubResource( 9 )
+nodes/vertex/11/node = SubResource( 24 )
 nodes/vertex/11/position = Vector2( -700, 420 )
-nodes/vertex/12/node = SubResource( 10 )
+nodes/vertex/12/node = SubResource( 25 )
 nodes/vertex/12/position = Vector2( -1480, 520 )
-nodes/vertex/13/node = SubResource( 11 )
+nodes/vertex/13/node = SubResource( 26 )
 nodes/vertex/13/position = Vector2( -1300, 520 )
-nodes/vertex/14/node = SubResource( 12 )
+nodes/vertex/14/node = SubResource( 27 )
 nodes/vertex/14/position = Vector2( -860, 480 )
-nodes/vertex/15/node = SubResource( 13 )
+nodes/vertex/15/node = SubResource( 28 )
 nodes/vertex/15/position = Vector2( -1060, 580 )
-nodes/vertex/16/node = SubResource( 14 )
+nodes/vertex/16/node = SubResource( 29 )
 nodes/vertex/16/position = Vector2( -911, 362 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 5, 1, 5, 0, 6, 0, 6, 0, 4, 0, 9, 0, 4, 1, 4, 0, 0, 0, 12, 0, 13, 0, 13, 0, 14, 0, 14, 0, 11, 1, 13, 1, 15, 0, 15, 0, 14, 1, 13, 2, 15, 1, 10, 0, 8, 0, 11, 0, 10, 0, 7, 0, 16, 0, 16, 0, 11, 0, 8, 0, 6, 1 )
 nodes/fragment/0/position = Vector2( 420, 140 )
-nodes/fragment/2/node = SubResource( 5 )
-nodes/fragment/2/position = Vector2( 80, 180 )
-nodes/fragment/3/node = SubResource( 6 )
+nodes/fragment/2/node = SubResource( 17 )
+nodes/fragment/2/position = Vector2( -40, 80 )
+nodes/fragment/3/node = SubResource( 18 )
 nodes/fragment/3/position = Vector2( 80, 320 )
-nodes/fragment/4/node = SubResource( 7 )
+nodes/fragment/4/node = SubResource( 19 )
 nodes/fragment/4/position = Vector2( 140, 480 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 16 )
+nodes/fragment/5/node = SubResource( 20 )
+nodes/fragment/5/position = Vector2( 160, 120 )
+nodes/fragment/6/node = SubResource( 21 )
+nodes/fragment/6/position = Vector2( -40, 200 )
+nodes/fragment/7/node = SubResource( 22 )
+nodes/fragment/7/position = Vector2( -360, 260 )
+nodes/fragment/connections = PoolIntArray( 3, 0, 0, 3, 4, 0, 0, 16, 2, 0, 5, 0, 5, 0, 0, 0, 6, 0, 5, 1, 7, 0, 5, 2 )
 
-[sub_resource type="ShaderMaterial" id=24]
-shader = SubResource( 23 )
+[sub_resource type="ShaderMaterial" id=39]
+shader = SubResource( 38 )
 shader_param/wind = 0.02
 shader_param/MainColor = Color( 0.0352941, 0.027451, 0.145098, 1 )
 
-[sub_resource type="CylinderShape" id=37]
+[sub_resource type="CylinderShape" id=40]
 radius = 1.80318
 height = 2.11138
 
-[sub_resource type="CapsuleShape" id=38]
+[sub_resource type="CapsuleShape" id=41]
 radius = 0.709919
 height = 2.4472
 
@@ -872,9 +797,11 @@ deadZone = 0.35
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/attack = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/run = SubResource( 3 )
+anims/idle = SubResource( 1 )
+anims/run = SubResource( 2 )
+
+[node name="WooshAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 3 )
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
@@ -883,55 +810,64 @@ shape = SubResource( 4 )
 [node name="Woosh" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17562, -1.04596 )
 
-[node name="WooshSprite3D" type="Sprite3D" parent="Woosh"]
-transform = Transform( 0.988793, 0, 0, 0, -1.29096e-07, 1, 0, -0.792387, -1.62921e-07, 0, -2.38419e-07, -1.29474 )
+[node name="Horizontal" type="Spatial" parent="Woosh"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="WooshSprite3D" type="Sprite3D" parent="Woosh/Horizontal"]
+transform = Transform( 0.629015, 0, -8.88178e-16, 0, -2.8864e-08, 1, 0, -0.660332, -4.37114e-08, -0.453199, 0.000309229, -1.74757 )
 texture = ExtResource( 10 )
 
-[node name="SwordMeshInstance" type="MeshInstance" parent="Woosh/WooshSprite3D"]
-transform = Transform( -0.415189, 0.00506837, 1.19158, 1.31284, 0.00165451, 0.376842, -8.07484e-05, 0.839235, -0.00793923, -0.741584, -1.41261, 0.000405908 )
+[node name="SwordMeshInstance" type="MeshInstance" parent="Woosh/Horizontal"]
+transform = Transform( -0.410536, 0.00501157, 1.17823, -8.09179e-05, 0.839235, -0.00793928, -1.04028, -0.00131115, -0.298605, -0.733273, 0.000405788, -0.175406 )
 mesh = ExtResource( 9 )
-material/0 = SubResource( 29 )
-material/1 = SubResource( 34 )
-material/2 = SubResource( 35 )
-material/3 = SubResource( 36 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
 
 [node name="body" type="MeshInstance" parent="."]
-transform = Transform( 0.986854, 0.091125, 0.133468, -0.123178, 0.958744, 0.256193, -0.104616, -0.269265, 0.957366, 0.0317664, 0.346329, -0.0046466 )
+transform = Transform( 0.881082, -0.0245849, 0.472322, -0.208987, 0.875628, 0.435427, -0.424284, -0.482356, 0.766364, 0.0134749, 0.258981, -0.0803724 )
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 6 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.13346, -0.168394 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.18671, -0.300909 )
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 7 )
 
 [node name="hair" type="MeshInstance" parent="head"]
 mesh = ExtResource( 4 )
-material/0 = SubResource( 24 )
+material/0 = SubResource( 39 )
+
+[node name="Sprite3D" type="Sprite3D" parent="head"]
+transform = Transform( -0.039157, 0.0844334, -0.220004, 0.0806145, 0.0302633, -0.545221, -0.0221698, -0.0220054, -0.897431, -0.0972256, -0.023376, -0.312097 )
+shaded = true
+double_sided = false
+texture = ExtResource( 11 )
 
 [node name="leg" type="MeshInstance" parent="."]
-transform = Transform( 0.382454, -0.0784303, 0.104857, 0.00325771, 0.543856, 0.168914, -0.117125, -0.240976, 0.347092, 0.53924, -0.793177, -0.0091058 )
+transform = Transform( 0.397077, -0.0693621, 0.0138508, 0.0223715, 0.41699, 0.286739, -0.0427741, -0.425803, 0.278548, 0.484375, -1.09656, -0.201554 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="leg2" type="MeshInstance" parent="."]
-transform = Transform( 0.392964, 0.107803, -0.0203611, -0.0658523, 0.577167, 0.0872307, 0.0352593, -0.123516, 0.389841, -0.625889, -0.690241, -0.315327 )
+transform = Transform( 0.396866, 0.0577238, -0.031893, -0.0291213, 0.578219, 0.10275, 0.0406205, -0.149434, 0.38526, -0.633589, -0.829423, -0.381986 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm" type="MeshInstance" parent="."]
-transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871714, 0.803231, 0.244947, -0.417931 )
+transform = Transform( 0.285076, -0.117867, -0.0302863, -0.00339884, 0.116479, -0.286979, 0.0933829, 0.36406, 0.0820116, 0.803231, 0.315607, -0.417931 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm2" type="MeshInstance" parent="."]
-transform = Transform( 0.0491661, 0.317672, 0.17555, -0.00471291, 0.238084, -0.241025, -0.295907, 0.0489904, 0.033007, -0.698776, 0.156648, 0.440458 )
+transform = Transform( 0.28776, 0.0612409, 0.0713087, 0.0210775, 0.274103, -0.217471, -0.0821603, 0.28481, 0.193963, -0.798092, 0.205578, -0.238585 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="Sword" type="Spatial" parent="."]
-transform = Transform( 0.921238, -0.181317, 0.286975, -0.0481057, 0.733117, 0.757788, -0.302611, -0.668525, 0.753173, 1.08847, 0.0216498, -1.03921 )
+transform = Transform( 0.921238, -0.181316, 0.286975, -0.0481057, 0.733117, 0.757788, -0.302611, -0.668525, 0.753173, 1.07032, 0.113121, -1.03921 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -939,10 +875,10 @@ __meta__ = {
 [node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
 transform = Transform( -1.06171e-07, -1, 9.31323e-10, 1, 6.70552e-08, 0, -2.98023e-08, -7.45058e-08, 1, -0.0230027, 0.0356097, -0.096683 )
 mesh = ExtResource( 9 )
-material/0 = SubResource( 29 )
-material/1 = SubResource( 34 )
-material/2 = SubResource( 35 )
-material/3 = SubResource( 36 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
 
 [node name="SwordArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.26134 )
@@ -950,7 +886,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="SwordCollisionShape" type="CollisionShape" parent="SwordArea"]
-shape = SubResource( 37 )
+shape = SubResource( 40 )
 
 [node name="DamageArea" type="Area" parent="."]
 collision_layer = 0
@@ -958,5 +894,5 @@ collision_mask = 4
 
 [node name="ContactDamageCollisionShape" type="CollisionShape" parent="DamageArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 38 )
+shape = SubResource( 41 )
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
