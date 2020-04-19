@@ -28,7 +28,7 @@ target = NodePath("../Enemies/Scorpion")
 player = NodePath("../Player")
 
 [node name="ClippedCamera" type="ClippedCamera" parent="CameraHolder"]
-transform = Transform( 1, 0, 0, 0, 0.9006, 0.43465, 0, -0.43465, 0.9006, 0, 5.93945, 6.66379 )
+transform = Transform( 0.998749, -0.0170585, 0.0470004, -0.00666472, 0.886196, 0.463264, -0.0495542, -0.462998, 0.884974, 0.458068, 2.4487, 3.89532 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 0, 30, 0 )

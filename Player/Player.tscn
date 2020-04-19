@@ -14,7 +14,6 @@
 resource_name = "idle"
 length = 0.6
 loop = true
-step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("leg:translation")
 tracks/0/interp = 1
@@ -142,10 +141,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0.803231, 0.283715, -0.417931 ) ]
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.803231, 0.315607, -0.417931 ), Vector3( 0.803231, 0.210732, -0.368073 ), Vector3( 0.803231, 0.244947, -0.417931 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("arm:rotation_degrees")
@@ -154,10 +153,10 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 71.5599, -23.2749, 0 ) ]
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 73.0572, -20.2688, -2.22806 ), Vector3( 65.5948, -31.4155, 3.08231 ), Vector3( 71.5599, -23.2749, 0 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Sword:translation")
@@ -166,10 +165,10 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 1.14521, 0, -0.928915 ) ]
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1.07032, 0.113121, -1.03921 ), Vector3( 1.23512, -0.0625191, -0.923023 ), Vector3( 1.08847, 0.0216498, -1.03921 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Sword:rotation_degrees")
@@ -178,10 +177,10 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( -43.2344, 20.8579, -3.89973 ) ]
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ), Vector3( -43.2344, 20.8579, -3.89973 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -577,7 +576,7 @@ mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="Sword" type="Spatial" parent="."]
-transform = Transform( 0.921238, -0.181317, 0.286975, -0.0481056, 0.733117, 0.75779, -0.302611, -0.668525, 0.753173, 1.14521, 0, -0.928915 )
+transform = Transform( 0.921238, -0.181317, 0.286975, -0.0481056, 0.733117, 0.75779, -0.302611, -0.668525, 0.753173, 1.08847, 0.0216498, -1.03921 )
 
 [node name="SwordMeshInstance" type="MeshInstance" parent="Sword"]
 transform = Transform( -1.06171e-07, -1, 9.31323e-10, 1, 6.70552e-08, 0, -2.98023e-08, -7.45058e-08, 1, -0.0230027, 0.0356097, -0.096683 )
@@ -588,7 +587,7 @@ material/2 = SubResource( 36 )
 material/3 = SubResource( 37 )
 
 [node name="arm" type="MeshInstance" parent="."]
-transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871714, 0.803231, 0.283715, -0.417931 )
+transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871714, 0.803231, 0.244947, -0.417931 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
@@ -604,7 +603,6 @@ material/0 = ExtResource( 5 )
 
 [node name="SwordArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8451 )
-visible = false
 collision_layer = 32
 collision_mask = 0
 
