@@ -72,4 +72,5 @@ escape={
 
 [rendering]
 
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
