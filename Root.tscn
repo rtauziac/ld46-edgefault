@@ -19,7 +19,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 15 )
 cameraHolder = NodePath("../CameraHolder")
 
 [node name="CameraHolder" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.96544, 0.260623, 0, -0.260623, 0.96544, 0, 4, 15 )
+transform = Transform( 1, 0, 0, 0, 0.991076, -0.133294, 0, 0.133294, 0.991076, 0, 4, 15 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -28,7 +28,7 @@ target = NodePath("../Enemies/Scorpion")
 player = NodePath("../Player")
 
 [node name="ClippedCamera" type="ClippedCamera" parent="CameraHolder"]
-transform = Transform( 1, 0, 0, 0, 0.950174, 0.311722, 0, -0.311722, 0.950174, 0, 7.73157, 9.10489 )
+transform = Transform( 1, 0, 0, 0, 0.9006, 0.43465, 0, -0.43465, 0.9006, 0, 5.93945, 6.66379 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, -0.75, 0.433013, 0, 30, 0 )
@@ -38,5 +38,5 @@ shadow_enabled = true
 [node name="Enemies" type="Spatial" parent="."]
 
 [node name="Scorpion" parent="Enemies" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.77893, 0 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 2.41704, 0 )
 health = 12.0
