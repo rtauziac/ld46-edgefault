@@ -18,16 +18,18 @@ var nextChoice = 2
 func _ready():
 	rdmz.seed = OS.get_system_time_secs()
 	randomizeChoice()
+	$"AnimationPlayer".play("walk")
 
 func hit(hitDamage: float):
 	if isAlive():
 		print("Scorpion is hit")
-	
-	.hit(hitDamage)
-	
-	if !isAlive():
-		print("Scorpion is dead")
-		$"MainCollisionShape".disabled = true
+		.hit(hitDamage)
+		randomizeChoice()
+		
+		if !isAlive():
+			print("Scorpion is dead")
+			$"MainCollisionShape".disabled = true
+			$"AnimationPlayer".play("idle")
 
 func randomizeChoice():
 	nextChoice = rdmz.randf_range(0.1, 0.8)
@@ -54,25 +56,25 @@ func _process(delta):
 			randomizeChoice()
 	
 		var player: KinematicBody = get_parent().get_parent().find_node("Player")
-		self.translation
+		var lookAtTarget = Vector3(player.translation.x, self.translation.y, player.translation.z)
 		match state:
 			ScorpionState.moveLeft:
 				move_and_slide(flattenVector(-global_transform.basis.x) * speed * delta, Vector3(0, 1, 0))
-				look_at(player.translation, Vector3(0, 1, 0))				
+				look_at(lookAtTarget, Vector3(0, 1, 0))				
 			ScorpionState.moveRight:
 				move_and_slide(flattenVector(global_transform.basis.x) * speed * delta, Vector3(0, 1, 0))
-				look_at(player.translation, Vector3(0, 1, 0))				
+				look_at(lookAtTarget, Vector3(0, 1, 0))				
 			ScorpionState.moveForward:
 				move_and_slide(flattenVector(global_transform.basis.z) * speed * delta, Vector3(0, 1, 0))
-				look_at(player.translation, Vector3(0, 1, 0))				
+				look_at(lookAtTarget, Vector3(0, 1, 0))				
 			ScorpionState.moveBackward:
 				move_and_slide(flattenVector(-global_transform.basis.z) * speed * delta, Vector3(0, 1, 0))
-				look_at(player.translation, Vector3(0, 1, 0))				
+				look_at(lookAtTarget, Vector3(0, 1, 0))				
 			ScorpionState.attack:
 				move_and_slide(flattenVector(global_transform.basis.z) * speed * 4 * delta, Vector3(0, 1, 0))
 			ScorpionState.dodgeBack:
 				move_and_slide(flattenVector(-global_transform.basis.z) * speed * 4 * delta, Vector3(0, 1, 0))
-		move_and_slide(Vector3(0, -1, 0))
+		move_and_slide(Vector3(0, -10, 0))
 
 func flattenVector(vector: Vector3):
 	vector.y = 0
