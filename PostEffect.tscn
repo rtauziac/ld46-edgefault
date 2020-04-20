@@ -9,6 +9,7 @@ viewport_path = NodePath("GameViewport")
 
 [node name="GameViewport" type="Viewport" parent="."]
 size = Vector2( 640, 360 )
+handle_input_locally = false
 shadow_atlas_size = 1
 
 [node name="Root" parent="GameViewport" instance=ExtResource( 1 )]

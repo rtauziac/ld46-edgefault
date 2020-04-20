@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="LD46"
 run/main_scene="res://PostEffect.tscn"
+boot_splash/image="res://Splash.png"
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [autoload]
