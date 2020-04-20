@@ -1,0 +1,262 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Enemies/Scorpion/Scorpion.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Scorpion/scorpion.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Enemies/leg.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Enemies/EnemyMainMat.tres" type="Material" id=4]
+[ext_resource path="res://Enemies/blood.png" type="Texture" id=5]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.36077, 1.19543, 3.09344 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("leg:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 1.61437, 0.0553033, -1.19163 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("leg2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 1.85634, 0.0442798, 0.0434724 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("leg3:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( 1.80824, 0.328575, 1.42235 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("leg6:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( -1.8203, 0.333611, 1.4277 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("leg5:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( -1.85162, 0.0382805, 0.0399909 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("leg4:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector3( -1.62914, 0.0806632, -1.22088 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "walk"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("leg:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 2.19966, 0.136144, -1.62611 ), Vector3( 1.64962, -0.0124347, -1.18595 ), Vector3( 1.94993, 0.512627, -1.3691 ), Vector3( 1.94993, -0.129322, -1.05621 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("leg2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1.77466, 0.467809, -0.228473 ), Vector3( 1.77466, 0.54808, -0.0861306 ), Vector3( 2.3036, 0.280544, -0.382857 ), Vector3( 1.76714, 0.321218, -0.194389 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("leg3:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1.9353, 0.567265, 0.995748 ), Vector3( 2.21996, 0.528726, 0.76045 ), Vector3( 1.80859, 0.314276, 0.564276 ), Vector3( 1.89744, 0.35495, 1.0821 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("leg6:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -1.76477, 0.55485, 1.48518 ), Vector3( -1.9696, 0.0766022, 1.13881 ), Vector3( -1.74031, 0.491644, 0.887686 ), Vector3( -2.04148, -0.0815036, 1.5526 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("leg5:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -2.08094, -0.177564, -0.205454 ), Vector3( -1.77994, -0.0684626, -0.156282 ), Vector3( -1.87557, 0.221596, 0.0724523 ), Vector3( -1.81897, -0.159533, 0.0724523 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("leg4:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -2.05281, 0.293001, -1.49949 ), Vector3( -2.05281, 0.0338266, -1.20556 ), Vector3( -1.92753, -0.37323, -1.20556 ), Vector3( -2.06626, 0.278476, -0.944195 ) ]
+}
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 28.9002, 0, 0, Vector2( 0.103226, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.662566, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -7.45662, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+initial_velocity = 7.0
+initial_velocity_random = 0.77
+angular_velocity = 437.3
+angular_velocity_random = 0.83
+damping = 3.23
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 0.82
+scale_curve = SubResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+
+[node name="Scorpion" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15528, 0 )
+collision_layer = 4
+collision_mask = 39
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Scorpion"
+}
+speed = 250.0
+
+[node name="MainCollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 1 )
+anims/walk = SubResource( 2 )
+
+[node name="body" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015769, -0.267081, 0.0818546 )
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 4 )
+
+[node name="leg" type="MeshInstance" parent="."]
+transform = Transform( 0.502541, -0.522172, 0.0964042, 0.317586, 0.702745, -0.285224, 0.0811887, 0.483204, 0.518993, 1.61437, 0.0553033, -1.19163 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="leg2" type="MeshInstance" parent="."]
+transform = Transform( 0.408126, -0.733018, 0, 0.439811, 0.680209, 0, 0, 0, 0.6, 1.85634, 0.0442798, 0.0434724 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="leg3" type="MeshInstance" parent="."]
+transform = Transform( 0.49392, -0.513214, -0.145681, 0.317427, 0.848593, -9.3653e-10, 0.123624, -0.128453, 0.582045, 1.80824, 0.328575, 1.42235 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="leg6" type="MeshInstance" parent="."]
+transform = Transform( -0.502541, 0.522172, -0.0964042, 0.317427, 0.848593, -3.16126e-09, 0.0818079, -0.0850037, -0.592205, -1.8203, 0.333611, 1.4277 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="leg5" type="MeshInstance" parent="."]
+transform = Transform( -0.408126, 0.733018, -9.05975e-08, 0.439811, 0.680209, -9.67083e-15, 6.16252e-08, -1.10683e-07, -0.6, -1.85162, 0.0382805, 0.0399909 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="leg4" type="MeshInstance" parent="."]
+transform = Transform( -0.49392, 0.513215, 0.145681, 0.337727, 0.681818, 0.280331, 0.044542, 0.521282, -0.51009, -1.62914, 0.0806632, -1.22088 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( -1.03316e-07, -1, 0, 1, -1.03316e-07, 0, 0, 0, 1, 0.448755, 0.269504, 0 )
+cast_shadow = 0
+emitting = false
+amount = 18
+lifetime = 0.91
+local_coords = false
+draw_order = 1
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="BloodTimer" type="Timer" parent="."]
+wait_time = 0.2
+[connection signal="timeout" from="BloodTimer" to="." method="_on_BloodTimer_timeout"]

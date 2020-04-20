@@ -1,20 +1,149 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 50, 0.5, 50 )
 
-[sub_resource type="CubeMesh" id=2]
-size = Vector3( 100, 1, 100 )
+[sub_resource type="VisualShaderNodeScalarConstant" id=16]
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="VisualShaderNodeScalarConstant" id=18]
+constant = 0.4
+
+[sub_resource type="VisualShaderNodeVectorOp" id=19]
+output_port_for_preview = 0
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 2, 2, 2 ) ]
+operator = 5
+
+[sub_resource type="OpenSimplexNoise" id=2]
+seed = 10
+octaves = 4
+period = 24.5
+lacunarity = 1.0
+
+[sub_resource type="NoiseTexture" id=3]
+width = 1024
+height = 1024
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="VisualShaderNodeTexture" id=4]
+texture = SubResource( 3 )
+texture_type = 2
+
+[sub_resource type="VisualShaderNodeColorConstant" id=10]
+constant = Color( 0.84375, 0.7733, 0.606445, 1 )
+
+[sub_resource type="VisualShaderNodeInput" id=14]
+output_port_for_preview = 0
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=15]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 4, 4, 4 ) ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=17]
+constant = 0.9
+
+[sub_resource type="VisualShader" id=5]
+code = "shader_type spatial;
+uniform sampler2D tex_frg_2 : hint_normal;
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:3
+	vec3 n_out3p0;
+	float n_out3p1;
+	n_out3p0 = vec3(0.843750,0.773300,0.606445);
+	n_out3p1 = 1.000000;
+
+// Scalar:10
+	float n_out10p0;
+	n_out10p0 = 0.000000;
+
+// Scalar:9
+	float n_out9p0;
+	n_out9p0 = 0.900000;
+
+// Input:7
+	vec3 n_out7p0;
+	n_out7p0 = vec3(UV,0.0);
+
+// VectorOp:8
+	vec3 n_in8p1 = vec3(4.00000,4.00000,4.00000);
+	vec3 n_out8p0;
+	n_out8p0 = n_out7p0 * n_in8p1;
+
+// Texture:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	vec4 tex_frg_2_read = texture( tex_frg_2 , n_out8p0.xy );
+	n_out2p0 = tex_frg_2_read.rgb;
+	n_out2p1 = tex_frg_2_read.a;
+
+// VectorOp:12
+	vec3 n_in12p1 = vec3(2.00000,2.00000,2.00000);
+	vec3 n_out12p0;
+	n_out12p0 = pow( n_out2p0 , n_in12p1 );
+
+// Scalar:11
+	float n_out11p0;
+	n_out11p0 = 0.400000;
+
+// Output:0
+	ALBEDO = n_out3p0;
+	METALLIC = n_out10p0;
+	ROUGHNESS = n_out9p0;
+	NORMALMAP = n_out12p0;
+	NORMALMAP_DEPTH = n_out11p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -611, 160.446 )
+nodes/fragment/2/node = SubResource( 4 )
+nodes/fragment/2/position = Vector2( -460, 200 )
+nodes/fragment/3/node = SubResource( 10 )
+nodes/fragment/3/position = Vector2( -40, 20 )
+nodes/fragment/7/node = SubResource( 14 )
+nodes/fragment/7/position = Vector2( -860, 280 )
+nodes/fragment/8/node = SubResource( 15 )
+nodes/fragment/8/position = Vector2( -660, 300 )
+nodes/fragment/9/node = SubResource( 17 )
+nodes/fragment/9/position = Vector2( 180, 260 )
+nodes/fragment/10/node = SubResource( 16 )
+nodes/fragment/10/position = Vector2( 160, 180 )
+nodes/fragment/11/node = SubResource( 18 )
+nodes/fragment/11/position = Vector2( 80, 380 )
+nodes/fragment/12/node = SubResource( 19 )
+nodes/fragment/12/position = Vector2( -200, 260 )
+nodes/fragment/connections = PoolIntArray( 7, 0, 8, 0, 8, 0, 2, 0, 9, 0, 0, 3, 10, 0, 0, 2, 11, 0, 0, 9, 3, 0, 0, 0, 2, 0, 12, 0, 12, 0, 0, 8 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[sub_resource type="CubeMesh" id=7]
+material = SubResource( 6 )
+size = Vector3( 61, 1, 61 )
+
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 1, 5, 30 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=9]
 size = Vector3( 2, 10, 60 )
 
 [node name="Arena" type="Spatial"]
 
 [node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360045, -0.179802, 0.15781 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -23,57 +152,61 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-mesh = SubResource( 2 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 0 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall"]
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
-mesh = SubResource( 4 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Wall2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 5, 0 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall2"]
-mesh = SubResource( 4 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Wall3" type="StaticBody" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5, 30 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall3"]
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall3"]
-mesh = SubResource( 4 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Wall4" type="StaticBody" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5, -30 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall4"]
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall4"]
-mesh = SubResource( 4 )
+mesh = SubResource( 9 )
 material/0 = null
