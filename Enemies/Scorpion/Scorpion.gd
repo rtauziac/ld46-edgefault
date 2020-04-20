@@ -1,5 +1,7 @@
 extends "res://Enemies/EnemyBase.gd"
 
+signal on_dead
+
 enum ScorpionState {
 	moveRight,
 	moveLeft,
@@ -32,6 +34,7 @@ func hit(hitDamage: float):
 			print("Scorpion is dead")
 			$"MainCollisionShape".disabled = true
 			$"AnimationPlayer".play("idle")
+			emit_signal("on_dead")
 
 func randomizeChoice():
 	nextChoice = rdmz.randf_range(0.1, 0.8)

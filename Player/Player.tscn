@@ -796,7 +796,6 @@ gravity = -60.0
 deadZone = 0.35
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
 anims/idle = SubResource( 1 )
 anims/run = SubResource( 2 )
 
@@ -826,12 +825,12 @@ material/2 = SubResource( 15 )
 material/3 = SubResource( 16 )
 
 [node name="body" type="MeshInstance" parent="."]
-transform = Transform( 0.881082, -0.0245849, 0.472322, -0.208987, 0.875628, 0.435427, -0.424284, -0.482356, 0.766364, 0.0134749, 0.258981, -0.0803724 )
+transform = Transform( 0.905271, 0.00796555, 0.424758, -0.167829, 0.925202, 0.340338, -0.390277, -0.379385, 0.838898, 0.0134749, 0.384237, -0.0384486 )
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 6 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.18671, -0.300909 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.14918, -0.328257 )
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 7 )
@@ -847,27 +846,27 @@ double_sided = false
 texture = ExtResource( 11 )
 
 [node name="leg" type="MeshInstance" parent="."]
-transform = Transform( 0.397077, -0.0693621, 0.0138508, 0.0223715, 0.41699, 0.286739, -0.0427741, -0.425803, 0.278548, 0.484375, -1.09656, -0.201554 )
+transform = Transform( 0.374204, -0.1724, 0.0822324, 0.0434464, 0.47256, 0.242615, -0.134478, -0.327055, 0.307206, 0.341834, -0.998493, -0.0388036 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="leg2" type="MeshInstance" parent="."]
-transform = Transform( 0.396866, 0.0577238, -0.031893, -0.0291213, 0.578219, 0.10275, 0.0406205, -0.149434, 0.38526, -0.633589, -0.829423, -0.381986 )
+transform = Transform( 0.389095, 0.135756, -0.0203611, -0.0841044, 0.571807, 0.0872307, 0.0391413, -0.120857, 0.389841, -0.517582, -0.829423, -0.309619 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm" type="MeshInstance" parent="."]
-transform = Transform( 0.285076, -0.117867, -0.0302863, -0.00339884, 0.116479, -0.286979, 0.0933829, 0.36406, 0.0820116, 0.803231, 0.315607, -0.417931 )
+transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871715, 0.803231, 0.244947, -0.417931 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm2" type="MeshInstance" parent="."]
-transform = Transform( 0.28776, 0.0612409, 0.0713087, 0.0210775, 0.274103, -0.217471, -0.0821603, 0.28481, 0.193963, -0.798092, 0.205578, -0.238585 )
+transform = Transform( 0.266495, 0.104822, 0.113138, 0.0184604, 0.298351, -0.19897, -0.136529, 0.244946, 0.193935, -0.793756, 0.156648, -0.238585 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="Sword" type="Spatial" parent="."]
-transform = Transform( 0.921238, -0.181316, 0.286975, -0.0481057, 0.733117, 0.757788, -0.302611, -0.668525, 0.753173, 1.07032, 0.113121, -1.03921 )
+transform = Transform( 0.921238, -0.181316, 0.286975, -0.0481057, 0.733117, 0.757788, -0.302611, -0.668525, 0.753173, 1.08847, 0.0216498, -1.03921 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -17,10 +17,11 @@ wait_time = 3.0
 environment = ExtResource( 3 )
 
 [node name="Arena" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00983095, 0.00779068, 0.000521183 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00853205, 0.00779163, -0.054729 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38011, 15 )
+health = 4.0
 cameraHolder = NodePath("../CameraHolder")
 
 [node name="CameraHolder" type="Spatial" parent="."]
@@ -46,3 +47,4 @@ shadow_enabled = true
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 2.41704, 0 )
 health = 12.0
 [connection signal="timeout" from="FinishTimer" to="." method="_on_FinishTimer_timeout"]
+[connection signal="on_dead" from="Enemies/Scorpion" to="." method="_on_Scorpion_on_dead"]
