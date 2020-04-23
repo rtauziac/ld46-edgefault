@@ -25,6 +25,10 @@ config/icon="res://icon.png"
 
 GlobalNodeReferences="*res://GlobalNodeReferences.gd"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 jump={
