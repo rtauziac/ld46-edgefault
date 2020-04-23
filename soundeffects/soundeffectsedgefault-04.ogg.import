@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/soundeffectsedgefault-04.ogg-f7feaded865de7597a453d72fcbf7bdf.oggstr"
+
+[deps]
+
+source_file="res://soundeffects/soundeffectsedgefault-04.ogg"
+dest_files=[ "res://.import/soundeffectsedgefault-04.ogg-f7feaded865de7597a453d72fcbf7bdf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

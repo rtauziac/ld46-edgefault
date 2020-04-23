@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Player/Player.vs" type="Script" id=1]
 [ext_resource path="res://Player/samurai_body.obj" type="ArrayMesh" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Player/blade.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Player/woosh.png" type="Texture" id=10]
 [ext_resource path="res://Player/eye.png" type="Texture" id=11]
+[ext_resource path="res://soundeffects/soundeffectsedgefault-01.ogg" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.6
@@ -355,6 +356,23 @@ tracks/13/keys = {
 "update": 1,
 "values": [ Vector3( -80.288, 171.097, 166.88 ), Vector3( -84.9924, -20.6435, 12.3463 ), Vector3( -58.8457, 9.74199, 5.59204 ), Vector3( -52.1207, 10.8111, 4.70957 ) ]
 }
+tracks/14/type = "method"
+tracks/14/path = NodePath(".")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "playStepSound"
+}, {
+"args": [  ],
+"method": "playStepSound"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "attack"
@@ -405,6 +423,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector3( 0, -90, 0 ), Vector3( 0, 20, 0 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "playSwordSound"
+} ]
+}
 
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.580333
@@ -431,18 +463,14 @@ void vertex() {
 
 void fragment() {
 // ColorUniform:2
-	vec3 n_out2p0;
-	float n_out2p1;
-	n_out2p0 = MainColor.rgb;
-	n_out2p1 = MainColor.a;
+	vec3 n_out2p0 = MainColor.rgb;
+	float n_out2p1 = MainColor.a;
 
 // Scalar:4
-	float n_out4p0;
-	n_out4p0 = 0.300000;
+	float n_out4p0 = 0.300000;
 
 // Scalar:3
-	float n_out3p0;
-	n_out3p0 = 0.000000;
+	float n_out3p0 = 0.000000;
 
 // Output:0
 	ALBEDO = n_out2p0;
@@ -490,18 +518,14 @@ void vertex() {
 
 void fragment() {
 // ColorUniform:2
-	vec3 n_out2p0;
-	float n_out2p1;
-	n_out2p0 = MainColor.rgb;
-	n_out2p1 = MainColor.a;
+	vec3 n_out2p0 = MainColor.rgb;
+	float n_out2p1 = MainColor.a;
 
 // Scalar:3
-	float n_out3p0;
-	n_out3p0 = 1.000000;
+	float n_out3p0 = 1.000000;
 
 // Scalar:4
-	float n_out4p0;
-	n_out4p0 = 0.000000;
+	float n_out4p0 = 0.000000;
 
 // Output:0
 	ALBEDO = n_out2p0;
@@ -609,70 +633,53 @@ uniform vec4 MainColor : hint_color;
 
 void vertex() {
 // ScalarUniform:2
-	float n_out2p0;
-	n_out2p0 = wind;
+	float n_out2p0 = wind;
 
 // Vector:3
-	vec3 n_out3p0;
-	n_out3p0 = vec3(1.000000,1.000000,1.000000);
+	vec3 n_out3p0 = vec3(1.000000, 1.000000, 1.000000);
 
 // VectorOp:5
-	vec3 n_out5p0;
-	n_out5p0 = vec3(n_out2p0) * n_out3p0;
+	vec3 n_out5p0 = vec3(n_out2p0) * n_out3p0;
 
 // Input:7
-	float n_out7p0;
-	n_out7p0 = TIME;
+	float n_out7p0 = TIME;
 
 // ScalarOp:16
 	float n_in16p1 = 3.00000;
-	float n_out16p0;
-	n_out16p0 = n_out7p0 * n_in16p1;
+	float n_out16p0 = n_out7p0 * n_in16p1;
 
 // Input:12
-	vec3 n_out12p0;
-	n_out12p0 = VERTEX;
+	vec3 n_out12p0 = VERTEX;
 
 // VectorDecompose:13
-	float n_out13p0;
-	float n_out13p1;
-	float n_out13p2;
-	n_out13p0 = n_out12p0.x;
-	n_out13p1 = n_out12p0.y;
-	n_out13p2 = n_out12p0.z;
+	float n_out13p0 = n_out12p0.x;
+	float n_out13p1 = n_out12p0.y;
+	float n_out13p2 = n_out12p0.z;
 
 // ScalarOp:15
-	float n_out15p0;
-	n_out15p0 = n_out13p1 + n_out13p2;
+	float n_out15p0 = n_out13p1 + n_out13p2;
 
 // ScalarOp:14
-	float n_out14p0;
-	n_out14p0 = n_out13p0 + n_out15p0;
+	float n_out14p0 = n_out13p0 + n_out15p0;
 
 // ScalarOp:11
-	float n_out11p0;
-	n_out11p0 = n_out16p0 + n_out14p0;
+	float n_out11p0 = n_out16p0 + n_out14p0;
 
 // ScalarOp:10
 	float n_in10p1 = 3.00000;
-	float n_out10p0;
-	n_out10p0 = n_out11p0 * n_in10p1;
+	float n_out10p0 = n_out11p0 * n_in10p1;
 
 // ScalarFunc:8
-	float n_out8p0;
-	n_out8p0 = sin(n_out10p0);
+	float n_out8p0 = sin(n_out10p0);
 
 // VectorOp:6
-	vec3 n_out6p0;
-	n_out6p0 = n_out5p0 * vec3(n_out8p0);
+	vec3 n_out6p0 = n_out5p0 * vec3(n_out8p0);
 
 // Input:9
-	vec3 n_out9p0;
-	n_out9p0 = VERTEX;
+	vec3 n_out9p0 = VERTEX;
 
 // VectorOp:4
-	vec3 n_out4p0;
-	n_out4p0 = n_out6p0 + n_out9p0;
+	vec3 n_out4p0 = n_out6p0 + n_out9p0;
 
 // Output:0
 	VERTEX = n_out4p0;
@@ -681,33 +688,26 @@ void vertex() {
 
 void fragment() {
 // ColorUniform:2
-	vec3 n_out2p0;
-	float n_out2p1;
-	n_out2p0 = MainColor.rgb;
-	n_out2p1 = MainColor.a;
+	vec3 n_out2p0 = MainColor.rgb;
+	float n_out2p1 = MainColor.a;
 
 // Color:6
-	vec3 n_out6p0;
-	float n_out6p1;
-	n_out6p0 = vec3(1.000000,0.984375,0.984375);
-	n_out6p1 = 1.000000;
+	vec3 n_out6p0 = vec3(1.000000, 0.984375, 0.984375);
+	float n_out6p1 = 1.000000;
 
 // Fresnel:7
 	bool n_in7p2 = false;
 	float n_in7p3 = 5.00000;
-	float n_out7p0;
-	n_out7p0 = n_in7p2 ? (pow(clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3)) : (pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3));
+	float n_out7p0 = n_in7p2 ? (pow(clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3)) : (pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in7p3));
+
 // VectorScalarMix:5
-	vec3 n_out5p0;
-	n_out5p0 = mix( n_out2p0 , n_out6p0 , n_out7p0 );
+	vec3 n_out5p0 = mix(n_out2p0, n_out6p0, n_out7p0);
 
 // Scalar:3
-	float n_out3p0;
-	n_out3p0 = 0.300000;
+	float n_out3p0 = 0.300000;
 
 // Scalar:4
-	float n_out4p0;
-	n_out4p0 = 0.200000;
+	float n_out4p0 = 0.200000;
 
 // Output:0
 	ALBEDO = n_out5p0;
@@ -806,11 +806,14 @@ anims/attack = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 4 )
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 12 )
+
 [node name="Woosh" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17562, -1.04596 )
 
 [node name="Horizontal" type="Spatial" parent="Woosh"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 
 [node name="WooshSprite3D" type="Sprite3D" parent="Woosh/Horizontal"]
 transform = Transform( 0.629015, 0, -8.88178e-16, 0, -2.8864e-08, 1, 0, -0.660332, -4.37114e-08, -0.453199, 0.000309229, -1.74757 )
@@ -824,13 +827,17 @@ material/1 = SubResource( 14 )
 material/2 = SubResource( 15 )
 material/3 = SubResource( 16 )
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Woosh/Horizontal/SwordMeshInstance"]
+transform = Transform( 0.894169, 0.000725348, 0.114778, 0, 1.19154, 0.000555819, 0, -4.65661e-10, 0.829453, 1.87838, -2.38419e-07, 2.38419e-07 )
+attenuation_filter_db = -12.0
+
 [node name="body" type="MeshInstance" parent="."]
-transform = Transform( 0.905271, 0.00796555, 0.424758, -0.167829, 0.925202, 0.340338, -0.390277, -0.379385, 0.838898, 0.0134749, 0.384237, -0.0384486 )
+transform = Transform( 0.962749, -0.185257, 0.196956, 0.10116, 0.922289, 0.373023, -0.250756, -0.339203, 0.906676, 0.0135938, 0.476542, -0.0115346 )
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 6 )
 
 [node name="head" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.14918, -0.328257 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134749, 1.29572, -0.182619 )
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 7 )
@@ -846,27 +853,27 @@ double_sided = false
 texture = ExtResource( 11 )
 
 [node name="leg" type="MeshInstance" parent="."]
-transform = Transform( 0.374204, -0.1724, 0.0822324, 0.0434464, 0.47256, 0.242615, -0.134478, -0.327055, 0.307206, 0.341834, -0.998493, -0.0388036 )
+transform = Transform( 0.0606755, -0.0522296, -0.393834, -0.311438, 0.361878, -0.0693105, 0.243568, 0.475727, 0.00948475, 0.341834, -0.908676, -0.665222 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="leg2" type="MeshInstance" parent="."]
-transform = Transform( 0.389095, 0.135756, -0.0203611, -0.0841044, 0.571807, 0.0872307, 0.0391413, -0.120857, 0.389841, -0.517582, -0.829423, -0.309619 )
+transform = Transform( 0.399117, -0.0398401, 0.000896941, -0.00042709, 0.0106322, 0.399937, -0.0265718, -0.598581, 0.00704413, -0.430953, -0.790658, 0.574669 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm" type="MeshInstance" parent="."]
-transform = Transform( 0.275586, -0.149942, -0.0374967, 0, 0.126525, -0.284597, 0.118543, 0.348581, 0.0871715, 0.803231, 0.244947, -0.417931 )
+transform = Transform( 0.285076, -0.117867, -0.0302862, 0.0930312, 0.345811, 0.118654, -0.00878025, -0.162857, 0.273869, 0.526855, 0.648716, 0.501127 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="arm2" type="MeshInstance" parent="."]
-transform = Transform( 0.266495, 0.104822, 0.113138, 0.0184604, 0.298351, -0.19897, -0.136529, 0.244946, 0.193935, -0.793756, 0.156648, -0.238585 )
+transform = Transform( 0.140328, -0.163632, -0.235047, -0.156597, 0.234993, -0.185513, 0.213977, 0.279289, 0.0183797, -0.675056, 0.213088, -0.656616 )
 mesh = ExtResource( 8 )
 material/0 = ExtResource( 5 )
 
 [node name="Sword" type="Spatial" parent="."]
-transform = Transform( 0.921238, -0.181316, 0.286975, -0.0481057, 0.733117, 0.757788, -0.302611, -0.668525, 0.753173, 1.08847, 0.0216498, -1.03921 )
+transform = Transform( 0.900508, 0.376022, 0.0288826, 0.0371766, -0.165704, 1.09043, 0.360931, -0.921092, -0.184377, 0.732274, 0.0733281, 0.808638 )
 __meta__ = {
 "_edit_group_": true
 }
